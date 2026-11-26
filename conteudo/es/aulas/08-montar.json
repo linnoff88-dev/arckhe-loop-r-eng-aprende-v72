@@ -41,7 +41,7 @@
           "icone": "alvo",
           "titulo": "Hipótesis",
           "sub": "clase 1",
-          "detalhe": "hipotese.md en la raíz pasa en hipotese.py: métrica, atual, alvo, direção, medida y sem-piorar."
+          "detalhe": "hipotese.md en la raíz pasa en hipotese.py: métrica, atual, alvo, direçêo, medida y sem-piorar."
         },
         {
           "icone": "git",
@@ -111,7 +111,7 @@
         "abas": [
           {
             "rot": "Salida capturada (19/10/2026)",
-            "html": "<pre>## uma pasta sem nada\nsaída: 1\nLOOP: 0/8 — FALTAM 1, 2, 3, 4, 5, 6, 7, 8\n## as oito peças montadas pelo kit (o que as aulas 1 a 7 fizeram)\nOK     1 hipótese com número  (hipotese.md passa no hipotese.py)\nOK     2 experimento keep/discard  (results.tsv com 1 ciclo(s))\nOK     3 promoção e rollback  (versoes/atual + ledger com PROMOVIDA)\nOK     4 lições com decisão (SIL)  (1 regra(s) ativa(s) no SIL)\nOK     5 regra vinculante no AGENTS.md  (bloco promovido e check sem pendência)\nOK     6 medidor fora do alcance  (GUARDA confere e ESCONDIDOS fora da pasta)\nOK     7 rastro por ciclo  (RASTRO com pelo menos um ciclo)\nOK     8 teto e aprovador  (TETO_TOKENS e APROVADOR no loop.conf)\nLOOP: 8/8 — PRONTO\nsaída: 0\n## o loop.conf que o conferir lê\nLOOP=/tmp/ensaio-aprende/a8/meu-loop-fora/promocao\nGUARDA=/tmp/ensaio-aprende/a8/meu-loop-fora/medidor.sha256\nESCONDIDOS=/tmp/ensaio-aprende/a8/meu-loop-fora/escondidos.jsonl\nRASTRO=/tmp/ensaio-aprende/a8/meu-loop-fora/rastros.jsonl\nTETO_TOKENS=50000\nAPROVADOR=Seu Nome</pre><p>Lo que queda fuera del repo del sistema (medidor, ocultos, traza, versiones) va a una carpeta hermana: el agente que modifica el sistema no alcanza lo que lo juzga.</p>"
+            "html": "<pre>## uma pasta sem nada\nsaída: 1\nLOOP: 0/8 — FALTAM 1, 2, 3, 4, 5, 6, 7, 8\n## as oito peças montadas pelo kit (o que as aulas 1 a 7 fizeram)\nOK     1 hipótese com número  (hipotese.md passa no hipotese.py)\nOK     2 experimento keep/discard  (results.tsv com 1 ciclo(s))\nOK     3 promoçêo e rollback  (versoes/atual + ledger com PROMOVIDA)\nOK     4 lições com decisêo (SIL)  (1 regra(s) ativa(s) no SIL)\nOK     5 regra vinculante no AGENTS.md  (bloco promovido e check sem pendência)\nOK     6 medidor fora do alcance  (GUARDA confere e ESCONDIDOS fora da pasta)\nOK     7 rastro por ciclo  (RASTRO com pelo menos um ciclo)\nOK     8 teto e aprovador  (TETO_TOKENS e APROVADOR no loop.conf)\nLOOP: 8/8 — PRONTO\nsaída: 0\n## o loop.conf que o conferir lê\nLOOP=/tmp/ensaio-aprende/a8/meu-loop-fora/promocao\nGUARDA=/tmp/ensaio-aprende/a8/meu-loop-fora/medidor.sha256\nESCONDIDOS=/tmp/ensaio-aprende/a8/meu-loop-fora/escondidos.jsonl\nRASTRO=/tmp/ensaio-aprende/a8/meu-loop-fora/rastros.jsonl\nTETO_TOKENS=50000\nAPROVADOR=Seu Nome</pre><p>Lo que queda fuera del repo del sistema (medidor, ocultos, traza, versiones) va a una carpeta hermana: el agente que modifica el sistema no alcanza lo que lo juzga.</p>"
           }
         ]
       }

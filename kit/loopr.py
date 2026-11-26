@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""loopr.py — veredito A/B, cartão de decisão, promoção e rollback, no desenho do LOOP-R (loop-r/.claude/skills/loop-r).
+"""loopr.py — veredito A/B, cartêo de decisêo, promoçêo e rollback, no desenho do LOOP-R (loop-r/.claude/skills/loop-r).
 
   python3 loopr.py iniciar  <loop> --v1 <prompt.md> --candidata <prompt.md>   pasta versoes/{v1,candidata-vB}, atual → v1, ledger, git
   python3 loopr.py veredito <loop> --csv <execucoes.csv> --de AAAA-MM-DD --ate AAAA-MM-DD --metrica <coluna>
                             --minimo N [--vigiar coluna:tolerancia ...]               grava <loop>/veredito.md
-  python3 loopr.py cartao   <loop> --hipotese "<título>" [--tokens N]           o cartão de 5 linhas
+  python3 loopr.py cartao   <loop> --hipotese "<título>" [--tokens N]           o cartêo de 5 linhas
   python3 loopr.py decidir  <loop> aprovado|rejeitado|esperar --por "<nome>"   grava <loop>/decisao.md
   python3 loopr.py promover <loop>                                            exige B_GANHOU + aprovado
   python3 loopr.py reverter <loop> --motivo "<motivo>"                        atual volta; a pasta fica
@@ -46,7 +46,7 @@ def iniciar(loop, a):
     (loop / "versoes/candidata-vB/executor.prompt.md").write_text(Path(arg(a, "--candidata")).read_text(encoding="utf-8"), encoding="utf-8")
     os.symlink("v1", loop / "versoes/atual")
     (loop / "memoria/ledger.md").write_text("# Ledger\n\n| data | evento |\n|---|---|\n", encoding="utf-8")
-    ledger(loop, "PROMOVIDA v1 — versão de base")
+    ledger(loop, "PROMOVIDA v1 — versêo de base")
     subprocess.run(["git", "init", "-q", "-b", "main", str(loop)], check=True)
     git(loop, "add", "-A")
     git(loop, "commit", "-q", "-m", "loop-r: iniciar")
@@ -77,7 +77,7 @@ def veredito(loop, a):
         col, tol = v.split(":")
         (xa, _), (xb, _) = taxa(A, col), taxa(B, col)
         d = xb / nb - xa / na
-        ok = d <= float(tol)   # colunas vigiadas aqui são eventos ruins (reclamação, opt-out): subir é piorar
+        ok = d <= float(tol)   # colunas vigiadas aqui sêo eventos ruins (reclamaçêo, opt-out): subir é piorar
         out.append(f"Vigiada {col}: A {xa}/{na} vs B {xb}/{nb}, Δ={d:+.4f} tol {float(tol):g} → {'DENTRO' if ok else 'FALHA'}")
         if not ok:
             caiu.append(col)
@@ -101,8 +101,8 @@ def cartao(loop, a):
     print(f"CICLO — hipótese: \"{arg(a, '--hipotese')}\"")
     print(f"Resultado:   {met[3]} {met[4].split('=')[1]} → {met[6].split('=')[1]}  ({met[5]} vs {met[7]}, {met[8]}, {met[9]})  [{linhas[0]}]")
     print(f"Vigiado:     {vig or '—'}")
-    print(f"Custo:       {int(tok):,} tokens neste ciclo (sai da cota)".replace(",", ".") if tok else "Custo:       não medido")
-    print("Decisão:     aprovar / rejeitar / esperar mais dados")
+    print(f"Custo:       {int(tok):,} tokens neste ciclo (sai da cota)".replace(",", ".") if tok else "Custo:       nêo medido")
+    print("Decisêo:     aprovar / rejeitar / esperar mais dados")
     return 0
 
 
@@ -112,7 +112,7 @@ def decidir(loop, a):
         print("uso: decidir <loop> aprovado|rejeitado|esperar --por <nome>")
         return 2
     (loop / "decisao.md").write_text(f"{d} — {datetime.date.today()} — {arg(a, '--por')}\n", encoding="utf-8")
-    print(f"decisão gravada: {d}")
+    print(f"decisêo gravada: {d}")
     return 0
 
 
@@ -120,13 +120,13 @@ def promover(loop, a):
     v = (loop / "veredito.md").read_text(encoding="utf-8").split()[1] if (loop / "veredito.md").exists() else "nenhum"
     d = (loop / "decisao.md").read_text(encoding="utf-8").split()[0] if (loop / "decisao.md").exists() else "nenhuma"
     if v != "B_GANHOU" or d != "aprovado":
-        print(f"RECUSADO: promover exige veredito B_GANHOU e decisão aprovado (veredito: {v}; decisão: {d})")
+        print(f"RECUSADO: promover exige veredito B_GANHOU e decisêo aprovado (veredito: {v}; decisêo: {d})")
         return 1
     n = 1 + max(int(p.name[1:]) for p in (loop / "versoes").glob("v[0-9]*"))
     (loop / "versoes/candidata-vB").rename(loop / f"versoes/v{n}")
     os.remove(loop / "versoes/atual")
     os.symlink(f"v{n}", loop / "versoes/atual")
-    ledger(loop, f"PROMOVIDA v{n} — {v}, decisão {d}")
+    ledger(loop, f"PROMOVIDA v{n} — {v}, decisêo {d}")
     (loop / "veredito.md").rename(loop / f"versoes/v{n}/veredito.md")
     (loop / "decisao.md").rename(loop / f"versoes/v{n}/decisao.md")
     git(loop, "add", "-A")
@@ -144,7 +144,7 @@ def reverter(loop, a):
     promovidas = [l.split("PROMOVIDA ")[1].split()[0] for l in (loop / "memoria/ledger.md").read_text(encoding="utf-8").splitlines() if "PROMOVIDA " in l]
     anteriores = promovidas[:promovidas.index(agora)] if agora in promovidas else []
     if not anteriores:
-        print(f"RECUSADO: não há versão promovida antes de {agora}")
+        print(f"RECUSADO: nêo há versêo promovida antes de {agora}")
         return 1
     alvo = anteriores[-1]
     os.remove(loop / "versoes/atual")

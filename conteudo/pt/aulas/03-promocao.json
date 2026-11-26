@@ -1,12 +1,12 @@
 {
   "slug": "promocao",
   "num": 3,
-  "menu": "Promoção",
-  "titulo": "Cartão de decisão, promoção e rollback",
-  "titulo_curto": "Promoção e rollback",
+  "menu": "Promoçêo",
+  "titulo": "Cartêo de decisêo, promoçêo e rollback",
+  "titulo_curto": "Promoçêo e rollback",
   "minutos": 20,
-  "lead": "Um keep no laboratório ainda não é a versão oficial. Em produção, a versão nova só sobe quando o veredito diz que B ganhou sem piorar nada, alguém aprova pelo cartão de cinco linhas e há um caminho de volta que não apaga nada. Nesta aula você refaz os vereditos publicados do exemplo do LOOP-R, promove e reverte.",
-  "objetivo": "ler um veredito A/B com guarda-corpos, mostrar o cartão de 5 linhas, promover só com aprovação e reverter sem apagar a versão.",
+  "lead": "Um keep no laboratório ainda nêo é a versêo oficial. Em produçêo, a versêo nova só sobe quando o veredito diz que B ganhou sem piorar nada, alguém aprova pelo cartêo de cinco linhas e há um caminho de volta que nêo apaga nada. Nesta aula você refaz os vereditos publicados do exemplo do LOOP-R, promove e reverte.",
+  "objetivo": "ler um veredito A/B com guarda-corpos, mostrar o cartêo de 5 linhas, promover só com aprovaçêo e reverter sem apagar a versêo.",
   "competencias": [
     "ler-veredito-com-guarda-corpos",
     "promover-com-aprovacao",
@@ -19,22 +19,22 @@
     },
     {
       "icone": "lista",
-      "t": "O cartão de decisão de cinco linhas"
+      "t": "O cartêo de decisêo de cinco linhas"
     },
     {
       "icone": "portao",
-      "t": "Promover: veredito + aprovação, com commit"
+      "t": "Promover: veredito + aprovaçêo, com commit"
     },
     {
       "icone": "voltar",
       "t": "Rollback: o link volta, a pasta fica"
     }
   ],
-  "hero_alt": "Chave seletora industrial de duas posições num painel escuro, uma posição marcada com ponto amarelo, ao lado de uma alavanca de retorno.",
+  "hero_alt": "Chave seletora industrial de duas posições num painel escuro, uma posiçêo marcada com ponto amarelo, ao lado de uma alavanca de retorno.",
   "secoes": [
     {
       "tipo": "diagrama",
-      "titulo": "Do veredito à versão oficial, e de volta",
+      "titulo": "Do veredito à versêo oficial, e de volta",
       "sub": "Os comandos decidir, promover e reverter do runner LOOP-R. Clique em cada bloco.",
       "nos": [
         {
@@ -45,7 +45,7 @@
         },
         {
           "icone": "lista",
-          "titulo": "Cartão",
+          "titulo": "Cartêo",
           "sub": "5 linhas",
           "detalhe": "Hipótese, resultado com N e p, vigiadas, custo e as três saídas: aprovar, rejeitar, esperar. É tudo o que o aprovador precisa ler, no máximo uma vez por semana."
         },
@@ -54,23 +54,23 @@
           "titulo": "Aprovador",
           "sub": "nível L1",
           "forte": true,
-          "detalhe": "Em L1, nada sobe sem decisao.md = aprovado. Sem resposta no prazo: pendente, não promove. Silêncio nunca é aprovação. L2 (promoção automática) só depois de 5 promoções em L1 sem rollback (loop-r/docs/05 §7)."
+          "detalhe": "Em L1, nada sobe sem decisao.md = aprovado. Sem resposta no prazo: pendente, nêo promove. Silêncio nunca é aprovaçêo. L2 (promoçêo automática) só depois de 5 promoções em L1 sem rollback (loop-r/docs/05 §7)."
         },
         {
           "icone": "portao",
           "titulo": "Promover",
           "sub": "atual → v2",
-          "detalhe": "A candidata vira v2, o link versoes/atual aponta para ela, o ledger ganha uma linha PROMOVIDA e tudo vai num commit. O runner recusa sem B_GANHOU e sem aprovação."
+          "detalhe": "A candidata vira v2, o link versoes/atual aponta para ela, o ledger ganha uma linha PROMOVIDA e tudo vai num commit. O runner recusa sem B_GANHOU e sem aprovaçêo."
         },
         {
           "icone": "voltar",
           "titulo": "Reverter",
           "sub": "atual → v1",
-          "detalhe": "Gatilho: no 1º ciclo depois da promoção, a métrica do teste ou um \"sem piorar\" cai abaixo da versão anterior além da tolerância. O link volta, o ledger registra o motivo, e a pasta v2 <b>fica</b>: é memória."
+          "detalhe": "Gatilho: no 1º ciclo depois da promoçêo, a métrica do teste ou um \"sem piorar\" cai abaixo da versêo anterior além da tolerância. O link volta, o ledger registra o motivo, e a pasta v2 <b>fica</b>: é memória."
         }
       ],
-      "legenda": "Invariantes do runner: nunca promover sem B_GANHOU + aprovação, nunca apagar ciclo, versão ou linha de memória, nunca dois experimentos ao mesmo tempo.",
-      "dica": "Rollback não é desfazer o commit: é um commit novo que muda o link. A história inteira continua no git."
+      "legenda": "Invariantes do runner: nunca promover sem B_GANHOU + aprovaçêo, nunca apagar ciclo, versêo ou linha de memória, nunca dois experimentos ao mesmo tempo.",
+      "dica": "Rollback nêo é desfazer o commit: é um commit novo que muda o link. A história inteira continua no git."
     },
     {
       "tipo": "codigo",
@@ -80,7 +80,7 @@
         {
           "rot": "Terminal · ensaio sem custo",
           "icone": "terminal",
-          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nX=~/projetos/loop-r/exemplos/vendas-whatsapp   # git clone https://github.com/inematds/loop-r ~/projetos/loop-r (dados SINTÉTICOS)\nE=${TMPDIR:-/tmp}/ensaio-aprende/a3; rm -rf $E; L=$E/loop   # uma CÓPIA: nada é gravado no repo loop-r\npython3 $K/loopr.py iniciar $L --v1 $X/versoes/v1/executor.prompt.md --candidata $X/versoes/v2/executor.prompt.md\necho \"## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações\"\npython3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-02-02 --ate 2026-04-26 \\\n  --metrica resposta --minimo 166 --vigiar reclamou:0 --vigiar optout:0.005; echo \"saída: $?\"\necho \"## E0002 · H3 (abrir citando um ponto da avaliação)\"\npython3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-05-04 --ate 2026-07-26 \\\n  --metrica resposta --minimo 212 --vigiar reclamou:0.01 --vigiar optout:0.005; echo \"saída: $?\""
+          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nX=~/projetos/loop-r/exemplos/vendas-whatsapp   # git clone https://github.com/inematds/loop-r ~/projetos/loop-r (dados SINTÉTICOS)\nE=${TMPDIR:-/tmp}/ensaio-aprende/a3; rm -rf $E; L=$E/loop   # uma CÓPIA: nada é gravado no repo loop-r\npython3 $K/loopr.py iniciar $L --v1 $X/versoes/v1/executor.prompt.md --candidata $X/versoes/v2/executor.prompt.md\necho \"## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações\"\npython3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-02-02 --ate 2026-04-26 \\\n  --metrica resposta --minimo 166 --vigiar reclamou:0 --vigiar optout:0.005; echo \"saída: $?\"\necho \"## E0002 · H3 (abrir citando um ponto da avaliaçêo)\"\npython3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-05-04 --ate 2026-07-26 \\\n  --metrica resposta --minimo 212 --vigiar reclamou:0.01 --vigiar optout:0.005; echo \"saída: $?\""
         }
       ],
       "saida": {
@@ -88,24 +88,24 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>loop iniciado: versoes/atual → v1\n## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações\nVEREDITO: A_SEGUE\nMétrica do teste: resposta  A=0.1933 (58/300)  B=0.2967 (89/300)  z=2.9426 p=0.0033\nVigiada reclamou: A 1/300 vs B 6/300, Δ=+0.0167 tol 0 → FALHA\nVigiada optout: A 0/300 vs B 1/300, Δ=+0.0033 tol 0.005 → DENTRO\nsaída: 1\n## E0002 · H3 (abrir citando um ponto da avaliação)\nVEREDITO: B_GANHOU\nMétrica do teste: resposta  A=0.1933 (58/300)  B=0.2933 (88/300)  z=2.8543 p=0.0043\nVigiada reclamou: A 2/300 vs B 4/300, Δ=+0.0067 tol 0.01 → DENTRO\nVigiada optout: A 3/300 vs B 1/300, Δ=-0.0067 tol 0.005 → DENTRO\nsaída: 0</pre><p>Os mesmos números do ledger publicado: E0001 com 58/300 contra 89/300 (z=2,94) foi descartado por reclamações (6 contra 1, tolerância 0); E0002 com 58/300 contra 88/300 (z=2,85, p=0,004) ganhou. Mesmo com a tolerância de 0,01 que o exemplo adotou depois, o E0001 ainda cairia (Δ=0,0167).</p>"
+            "html": "<pre>loop iniciado: versoes/atual → v1\n## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações\nVEREDITO: A_SEGUE\nMétrica do teste: resposta  A=0.1933 (58/300)  B=0.2967 (89/300)  z=2.9426 p=0.0033\nVigiada reclamou: A 1/300 vs B 6/300, Δ=+0.0167 tol 0 → FALHA\nVigiada optout: A 0/300 vs B 1/300, Δ=+0.0033 tol 0.005 → DENTRO\nsaída: 1\n## E0002 · H3 (abrir citando um ponto da avaliaçêo)\nVEREDITO: B_GANHOU\nMétrica do teste: resposta  A=0.1933 (58/300)  B=0.2933 (88/300)  z=2.8543 p=0.0043\nVigiada reclamou: A 2/300 vs B 4/300, Δ=+0.0067 tol 0.01 → DENTRO\nVigiada optout: A 3/300 vs B 1/300, Δ=-0.0067 tol 0.005 → DENTRO\nsaída: 0</pre><p>Os mesmos números do ledger publicado: E0001 com 58/300 contra 89/300 (z=2,94) foi descartado por reclamações (6 contra 1, tolerância 0); E0002 com 58/300 contra 88/300 (z=2,85, p=0,004) ganhou. Mesmo com a tolerância de 0,01 que o exemplo adotou depois, o E0001 ainda cairia (Δ=0,0167).</p>"
           },
           {
             "rot": "O erro comum",
-            "html": "<p>Ler só a métrica do teste. O E0001 tinha ganho maior que o E0002 e mesmo assim não podia subir: um guarda-corpo passou da tolerância. E a tolerância é combinada <b>antes</b>; mudá-la depois de ver o número é reescrever a hipótese.</p>"
+            "html": "<p>Ler só a métrica do teste. O E0001 tinha ganho maior que o E0002 e mesmo assim nêo podia subir: um guarda-corpo passou da tolerância. E a tolerância é combinada <b>antes</b>; mudá-la depois de ver o número é reescrever a hipótese.</p>"
           }
         ]
       }
     },
     {
       "tipo": "codigo",
-      "titulo": "Cartão, promoção e rollback",
-      "sub": "Continua o bloco anterior. O custo do cartão é a soma do custo.md do ciclo 0004 do exemplo (5 agentes, ~392 mil tokens); o exemplo também registra em reais, o curso conta em tokens.",
+      "titulo": "Cartêo, promoçêo e rollback",
+      "sub": "Continua o bloco anterior. O custo do cartêo é a soma do custo.md do ciclo 0004 do exemplo (5 agentes, ~392 mil tokens); o exemplo também registra em reais, o curso conta em tokens.",
       "blocos": [
         {
           "rot": "Terminal · ensaio sem custo",
           "icone": "terminal",
-          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nE=${TMPDIR:-/tmp}/ensaio-aprende/a3; L=$E/loop   # continua o bloco anterior (veredito B_GANHOU gravado)\npython3 $K/loopr.py promover $L; echo \"saída: $?\"\npython3 $K/loopr.py cartao $L --hipotese \"H3 — abrir citando a avaliação\" --tokens 392000\npython3 $K/loopr.py decidir $L aprovado --por \"Seu Nome\"\npython3 $K/loopr.py promover $L; echo \"atual → $(readlink $L/versoes/atual)\"\npython3 $K/loopr.py reverter $L --motivo \"resposta caiu no 1º ciclo após a promoção\"\necho \"atual → $(readlink $L/versoes/atual) · pastas: $(ls $L/versoes | tr '\\n' ' ')\"\ngit -C $L log --format=%s"
+          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nE=${TMPDIR:-/tmp}/ensaio-aprende/a3; L=$E/loop   # continua o bloco anterior (veredito B_GANHOU gravado)\npython3 $K/loopr.py promover $L; echo \"saída: $?\"\npython3 $K/loopr.py cartao $L --hipotese \"H3 — abrir citando a avaliaçêo\" --tokens 392000\npython3 $K/loopr.py decidir $L aprovado --por \"Seu Nome\"\npython3 $K/loopr.py promover $L; echo \"atual → $(readlink $L/versoes/atual)\"\npython3 $K/loopr.py reverter $L --motivo \"resposta caiu no 1º ciclo após a promoçêo\"\necho \"atual → $(readlink $L/versoes/atual) · pastas: $(ls $L/versoes | tr '\\n' ' ')\"\ngit -C $L log --format=%s"
         }
       ],
       "saida": {
@@ -113,7 +113,7 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>RECUSADO: promover exige veredito B_GANHOU e decisão aprovado (veredito: B_GANHOU; decisão: nenhuma)\nsaída: 1\nCICLO — hipótese: \"H3 — abrir citando a avaliação\"\nResultado:   resposta 0.1933 → 0.2933  ((58/300) vs (88/300), z=2.8543, p=0.0043)  [VEREDITO: B_GANHOU]\nVigiado:     reclamou ok · optout ok\nCusto:       392.000 tokens neste ciclo (sai da cota)\nDecisão:     aprovar / rejeitar / esperar mais dados\ndecisão gravada: aprovado\nPROMOVIDA: versoes/atual → v2\natual → v2\nROLLBACK: versoes/atual → v1 (a pasta v2 continua lá)\natual → v1 · pastas: atual v1 v2 \nloop-r: rollback v2 → v1\nloop-r: promote v2\nloop-r: iniciar</pre><p>A primeira tentativa de promover é recusada: veredito bom, mas ninguém aprovou. Depois do rollback, <code>atual</code> aponta para v1 e as duas pastas continuam lá.</p>"
+            "html": "<pre>RECUSADO: promover exige veredito B_GANHOU e decisêo aprovado (veredito: B_GANHOU; decisêo: nenhuma)\nsaída: 1\nCICLO — hipótese: \"H3 — abrir citando a avaliaçêo\"\nResultado:   resposta 0.1933 → 0.2933  ((58/300) vs (88/300), z=2.8543, p=0.0043)  [VEREDITO: B_GANHOU]\nVigiado:     reclamou ok · optout ok\nCusto:       392.000 tokens neste ciclo (sai da cota)\nDecisêo:     aprovar / rejeitar / esperar mais dados\ndecisêo gravada: aprovado\nPROMOVIDA: versoes/atual → v2\natual → v2\nROLLBACK: versoes/atual → v1 (a pasta v2 continua lá)\natual → v1 · pastas: atual v1 v2 \nloop-r: rollback v2 → v1\nloop-r: promote v2\nloop-r: iniciar</pre><p>A primeira tentativa de promover é recusada: veredito bom, mas ninguém aprovou. Depois do rollback, <code>atual</code> aponta para v1 e as duas pastas continuam lá.</p>"
           }
         ]
       }
@@ -121,7 +121,7 @@
     {
       "tipo": "simconversa",
       "titulo": "A dona quer promover já",
-      "sub": "Conversa simulada. O teste da versão B está na metade da amostra. Escolha o que você responde.",
+      "sub": "Conversa simulada. O teste da versêo B está na metade da amostra. Escolha o que você responde.",
       "personagem": {
         "nome": "Marta",
         "papel": "dona da clínica (personagem fictícia) · aprovadora L1"
@@ -129,10 +129,10 @@
       "inicio": "abre",
       "falas": {
         "abre": {
-          "cliente": "Vi o painel: a versão B está com 31% de resposta e a A com 20%. Já são 120 propostas de cada lado. Promove hoje, por favor.",
+          "cliente": "Vi o painel: a versêo B está com 31% de resposta e a A com 20%. Já sêo 120 propostas de cada lado. Promove hoje, por favor.",
           "opcoes": [
             {
-              "t": "Ainda não: o mínimo é 212 por variante. Parar quando está ganhando é o jeito mais comum de promover ruído. Com 50 por semana, faltam umas quatro.",
+              "t": "Ainda nêo: o mínimo é 212 por variante. Parar quando está ganhando é o jeito mais comum de promover ruído. Com 50 por semana, faltam umas quatro.",
               "vai": "reclama",
               "nota": 2,
               "comenta": "É a regra dura do LOOP-R: abaixo do N mínimo, AMOSTRA_INSUFICIENTE. Você deu o número e o prazo."
@@ -141,27 +141,27 @@
               "t": "Promovo, e deixo o rollback armado caso piore.",
               "vai": "fim-ruim",
               "nota": 0,
-              "comenta": "O rollback não conserta uma decisão tomada sobre ruído: a versão sobe sem prova e o teste acabou."
+              "comenta": "O rollback nêo conserta uma decisêo tomada sobre ruído: a versêo sobe sem prova e o teste acabou."
             },
             {
               "t": "Se a diferença continuar na semana que vem, eu promovo.",
               "vai": "reclama",
               "nota": 1,
-              "comenta": "Melhor que hoje, mas ainda é parar por vantagem parcial. O critério é o N mínimo, não a sensação de que continua ganhando."
+              "comenta": "Melhor que hoje, mas ainda é parar por vantagem parcial. O critério é o N mínimo, nêo a sensaçêo de que continua ganhando."
             }
           ]
         },
         "reclama": {
-          "cliente": "Tá. Mas as reclamações subiram: 1 na A e 3 na B. Isso não é motivo para parar agora?",
+          "cliente": "Tá. Mas as reclamações subiram: 1 na A e 3 na B. Isso nêo é motivo para parar agora?",
           "opcoes": [
             {
-              "t": "É o único motivo para parar antes: rodo o veredito com a tolerância que está no yaml. Se passar dela, B sai; se não, seguimos até 212.",
+              "t": "É o único motivo para parar antes: rodo o veredito com a tolerância que está no yaml. Se passar dela, B sai; se nêo, seguimos até 212.",
               "vai": "fim-bom",
               "nota": 2,
               "comenta": "Parada antecipada só por guarda-corpo caindo, com a tolerância combinada antes (loop-r/docs/05 §3)."
             },
             {
-              "t": "Zero a tolerância e paro: qualquer reclamação a mais derruba a B.",
+              "t": "Zero a tolerância e paro: qualquer reclamaçêo a mais derruba a B.",
               "vai": "fim-meio",
               "nota": 0,
               "comenta": "Tolerância zero em evento raro descarta hipótese boa por acaso. O exemplo aprendeu isso no ciclo 0002 e passou a usar 0,01."
@@ -177,20 +177,20 @@
         "fim-bom": {
           "fim": true,
           "titulo": "Teste íntegro",
-          "texto": "A B só sobe com 212 por variante, B_GANHOU com guarda-corpos dentro e o seu \"aprovado\" no cartão. Se uma vigiada passar da tolerância antes, o teste para por ela, não pela vantagem."
+          "texto": "A B só sobe com 212 por variante, B_GANHOU com guarda-corpos dentro e o seu \"aprovado\" no cartêo. Se uma vigiada passar da tolerância antes, o teste para por ela, nêo pela vantagem."
         },
         "fim-meio": {
           "fim": true,
           "titulo": "Teste de pé, regra frouxa",
-          "texto": "Você segurou a promoção, mas tratou mal o guarda-corpo. A tolerância é combinada antes, e vigiada durante."
+          "texto": "Você segurou a promoçêo, mas tratou mal o guarda-corpo. A tolerância é combinada antes, e vigiada durante."
         },
         "fim-ruim": {
           "fim": true,
           "titulo": "Promoveu ruído",
-          "texto": "Com metade da amostra, 31% contra 20% pode ser sorte. A versão subiu sem prova e o experimento perdeu o valor."
+          "texto": "Com metade da amostra, 31% contra 20% pode ser sorte. A versêo subiu sem prova e o experimento perdeu o valor."
         }
       },
-      "licao": "Promover pede N mínimo, B_GANHOU com guarda-corpos e aprovação explícita. A única parada antecipada é guarda-corpo caindo além da tolerância combinada antes."
+      "licao": "Promover pede N mínimo, B_GANHOU com guarda-corpos e aprovaçêo explícita. A única parada antecipada é guarda-corpo caindo além da tolerância combinada antes."
     },
     {
       "tipo": "pratica",
@@ -213,9 +213,9 @@
         },
         {
           "id": "e9",
-          "titulo": "E9 · O cartão do seu teste",
+          "titulo": "E9 · O cartêo do seu teste",
           "min": "20 min",
-          "texto": "Para a hipótese da aula 1, escreva as tolerâncias de cada \"sem piorar\" e o N mínimo antes de rodar. Para evento raro, use pelo menos 2 erros-padrão da taxa-base na amostra planejada (loop-r/docs/05 §2). Commite o hipotese.md com as tolerâncias antes do próximo ciclo.",
+          "texto": "Para a hipótese da aula 1, escreva as tolerâncias de cada \"sem piorar\" e o N mínimo antes de rodar. Para evento raro, use pelo menos 2 erros-padrêo da taxa-base na amostra planejada (loop-r/docs/05 §2). Commite o hipotese.md com as tolerâncias antes do próximo ciclo.",
           "pronto": "<code>H=$(git log --diff-filter=A --format=%ct -- hipotese.md | tail -1); C=$(git log --reverse --format=%ct --grep='^keep:' | head -1); [ -n \"$H\" ] &amp;&amp; { [ -z \"$C\" ] || [ \"$H\" -lt \"$C\" ]; }; echo \"saída: $?\"</code> → <code>saída: 0</code> (o hipotese.md entrou no git antes do primeiro keep), e o hipotese.md commitado tem uma tolerância numérica por \"sem piorar\"."
         }
       ]
@@ -238,15 +238,15 @@
           "cert": true
         },
         {
-          "p": "O veredito deu B_GANHOU e o aprovador não respondeu no prazo. O que acontece em L1?",
+          "p": "O veredito deu B_GANHOU e o aprovador nêo respondeu no prazo. O que acontece em L1?",
           "opcoes": [
-            "Fica pendente e não promove",
+            "Fica pendente e nêo promove",
             "Promove sozinho",
             "Reverte para a v1",
             "Roda outro experimento por cima"
           ],
           "certa": 0,
-          "explica": "Silêncio não é aprovação. Sem decisao.md = aprovado, o runner recusa promover.",
+          "explica": "Silêncio nêo é aprovaçêo. Sem decisao.md = aprovado, o runner recusa promover.",
           "ref": "diagrama",
           "cert": true
         },
@@ -256,10 +256,10 @@
             "É apagada",
             "Vira candidata de novo",
             "Continua lá, como memória, e o ledger registra o motivo",
-            "É movida para fora do repo e só volta com uma nova aprovação do dono"
+            "É movida para fora do repo e só volta com uma nova aprovaçêo do dono"
           ],
           "certa": 2,
-          "explica": "Rollback muda o link versoes/atual e registra o motivo. Nunca apagar versão é invariante do runner.",
+          "explica": "Rollback muda o link versoes/atual e registra o motivo. Nunca apagar versêo é invariante do runner.",
           "ref": "diagrama"
         },
         {
@@ -282,15 +282,15 @@
       "itens": [
         {
           "t": "Veredito",
-          "texto": "B ganha com significância, N mínimo e nenhum guarda-corpo fora da tolerância; senão A segue."
+          "texto": "B ganha com significância, N mínimo e nenhum guarda-corpo fora da tolerância; senêo A segue."
         },
         {
-          "t": "Aprovação",
-          "texto": "Em L1, o cartão de cinco linhas vai ao humano; sem \"aprovado\", nada sobe."
+          "t": "Aprovaçêo",
+          "texto": "Em L1, o cartêo de cinco linhas vai ao humano; sem \"aprovado\", nada sobe."
         },
         {
           "t": "Volta",
-          "texto": "Rollback é um commit que muda o link e anota o motivo; nenhuma versão é apagada."
+          "texto": "Rollback é um commit que muda o link e anota o motivo; nenhuma versêo é apagada."
         }
       ]
     },

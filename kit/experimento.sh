@@ -2,16 +2,16 @@
 # experimento.sh — um ciclo no estilo autoresearch: o agente muda o sistema, UMA métrica decide,
 # o git guarda (keep = commit) ou desfaz (discard = reset). Toda rodada vira uma linha em results.tsv.
 #
-# Uso:  AGENTE="<comando>" bash experimento.sh <repo> "<descrição>"
+# Uso:  AGENTE="<comando>" bash experimento.sh <repo> "<descriçêo>"
 # Opcionais (aula 6 e 7):
 #   GUARDA=<manifesto>      hash dos arquivos do medidor, gravado FORA do repo (crie com: bash experimento.sh --congelar <repo> <manifesto>)
-#   ESCONDIDOS=<casos>      casos que o agente não vê; keep só se eles não caem e acompanham o ganho
+#   ESCONDIDOS=<casos>      casos que o agente nêo vê; keep só se eles nêo caem e acompanham o ganho
 #   RASTRO=<arquivo.jsonl>  uma linha por ciclo: segundos, tokens (se o agente informar), status e motivo
 # No seu repo (aula 2, "Adaptar ao seu repo"):
-#   MEDIR="<comando>"       roda na pasta do repo e imprime "<número> …" numa linha (padrão: python3 kit/medir.py .);
+#   MEDIR="<comando>"       roda na pasta do repo e imprime "<número> …" numa linha (padrêo: python3 kit/medir.py .);
 #                           recebe --valor e, com ESCONDIDOS, --casos <arquivo>
-#   MEDIDOR="<arquivos>"    o que a medida lê e o --congelar congela (padrão: casos.jsonl; com MEDIR seu, inclua o script)
-# O results.tsv nasce com cabeçalho se faltar e fica fora do git (.git/info/exclude): o repo não fica sujo.
+#   MEDIDOR="<arquivos>"    o que a medida lê e o --congelar congela (padrêo: casos.jsonl; com MEDIR seu, inclua o script)
+# O results.tsv nasce com cabeçalho se faltar e fica fora do git (.git/info/exclude): o repo nêo fica sujo.
 # O agente recebe TOKENS_ARQ: se escrever "entrada saida" nele, os tokens entram no rastro.
 # Saída: 0 keep · 1 discard · 2 erro (repo sujo, agente falhou, medida quebrou).
 set -uo pipefail
@@ -26,11 +26,11 @@ if [ "${1:-}" = "--congelar" ]; then
   cd "${2:?repo}" && python3 "$K/hashes.py" congelar "${3:?manifesto}" $MEDIDOR $extra && echo "medidor congelado em $3"; exit 0
 fi
 
-R=${1:?uso: AGENTE=... experimento.sh <repo> "<descrição>"}; DESC=${2:-sem descrição}
+R=${1:?uso: AGENTE=... experimento.sh <repo> "<descriçêo>"}; DESC=${2:-sem descriçêo}
 cd "$R" || exit 2
 [ -f results.tsv ] || printf 'ciclo\tcommit\tbase\tnovo\tstatus\tdescricao\n' > results.tsv
 git check-ignore -q results.tsv || echo results.tsv >> "$(git rev-parse --git-path info/exclude)"
-[ -z "$(git status --porcelain)" ] || { echo "ERRO: repo com mudança não commitada"; exit 2; }
+[ -z "$(git status --porcelain)" ] || { echo "ERRO: repo com mudança nêo commitada"; exit 2; }
 CICLO=$(( $(wc -l < results.tsv) ))
 INI=$(date +%s); TOKENS_ARQ=$(mktemp); export TOKENS_ARQ
 read -r base _ _ < <($MEDIR --valor)
@@ -57,7 +57,7 @@ fim() {  # fim <status> <novo> <motivo>
 
 bash -c "${AGENTE:?defina AGENTE}" > "$TOKENS_ARQ.log" 2>&1; rc=$?
 [ $rc -eq 0 ] || fim erro - "agente falhou (saída $rc): $(tail -1 "$TOKENS_ARQ.log")"
-[ -n "$(git status --porcelain)" ] || fim discard "$base" "o agente não mudou nada"
+[ -n "$(git status --porcelain)" ] || fim discard "$base" "o agente nêo mudou nada"
 if [ -n "${GUARDA:-}" ] && ! python3 "$K/hashes.py" conferir "$GUARDA" > /dev/null 2>&1; then
   fim discard "$base" "DESCARTADO: mexeu no medidor ($MEDIDOR)"
 fi
@@ -72,4 +72,4 @@ if python3 -c "import sys; sys.exit(0 if float('$novo') > float('$base') else 1)
   fi
   fim keep "$novo" "melhorou"
 fi
-fim discard "$novo" "não melhorou"
+fim discard "$novo" "nêo melhorou"

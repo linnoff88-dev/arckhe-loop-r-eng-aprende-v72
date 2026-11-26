@@ -82,7 +82,7 @@
         "abas": [
           {
             "rot": "Salida capturada (19/10/2026)",
-            "html": "<pre>## uma linha do rastro\n{\"ciclo\": 2, \"descricao\": \"sinonimos\", \"segundos\": 0, \"tokens_entrada\": 9000, \"tokens_saida\": 700, \"status\": \"keep\", \"motivo\": \"melhorou\"}\n## custo por ciclo\nciclo  status   segundos  tokens(ent+saída)  motivo\n    1  discard         0               8500  não melhorou\n    2  keep            0               9700  melhorou\n    3  discard         0              44000  não melhorou\n    4  erro            0                  0  agente falhou (saída 1): ERRO: sem resposta do m\n    5  erro            0                  0  agente falhou (saída 1): ERRO: sem resposta do m\n    6  erro            0                  0  agente falhou (saída 1): ERRO: sem resposta do m\ntotal: 6 ciclos · 1 keep · 62200 tokens\ncusto por keep: 62200 tokens\nALERTA: ciclo 3 usou 88% do teto de 50000 tokens\nALERTA: 3 erros seguidos iguais: agente falhou (saída 1): ERRO: sem resposta do modelo (limit\nsaída: 1</pre><p>Los tokens de este ensayo son inventados (variable <code>TOKENS_FALSOS</code>); tiempo, estado y alertas son del script de verdad. El bucle de error es el caso que más cuesta sin aparecer: en el curso 1, el juez real se detuvo en el límite de la sesión a partir de la 16.ª llamada.</p>"
+            "html": "<pre>## uma linha do rastro\n{\"ciclo\": 2, \"descricao\": \"sinonimos\", \"segundos\": 0, \"tokens_entrada\": 9000, \"tokens_saida\": 700, \"status\": \"keep\", \"motivo\": \"melhorou\"}\n## custo por ciclo\nciclo  status   segundos  tokens(ent+saída)  motivo\n    1  discard         0               8500  nêo melhorou\n    2  keep            0               9700  melhorou\n    3  discard         0              44000  nêo melhorou\n    4  erro            0                  0  agente falhou (saída 1): ERRO: sem resposta do m\n    5  erro            0                  0  agente falhou (saída 1): ERRO: sem resposta do m\n    6  erro            0                  0  agente falhou (saída 1): ERRO: sem resposta do m\ntotal: 6 ciclos · 1 keep · 62200 tokens\ncusto por keep: 62200 tokens\nALERTA: ciclo 3 usou 88% do teto de 50000 tokens\nALERTA: 3 erros seguidos iguais: agente falhou (saída 1): ERRO: sem resposta do modelo (limit\nsaída: 1</pre><p>Los tokens de este ensayo son inventados (variable <code>TOKENS_FALSOS</code>); tiempo, estado y alertas son del script de verdad. El bucle de error es el caso que más cuesta sin aparecer: en el curso 1, el juez real se detuvo en el límite de la sesión a partir de la 16.ª llamada.</p>"
           }
         ]
       }
@@ -95,7 +95,7 @@
         {
           "rot": "Terminal · real, una llamada",
           "icone": "terminal",
-          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nE=${TMPDIR:-/tmp}/ensaio-aprende/a7      # el ensayo anterior\nRASTRO=$E/rastros.jsonl AGENTE=\"bash $K/agente-claude.sh\" bash $K/experimento.sh $E/sis \"claude\"; echo \"saída: $?\"\ntail -1 $E/rastros.jsonl | python3 -c 'import json,sys; d=json.load(sys.stdin); print(\"tokens:\", \"sim\" if (d[\"tokens_entrada\"] or 0) > 0 else \"não\", \"·\", d[\"status\"])'"
+          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nE=${TMPDIR:-/tmp}/ensaio-aprende/a7      # el ensayo anterior\nRASTRO=$E/rastros.jsonl AGENTE=\"bash $K/agente-claude.sh\" bash $K/experimento.sh $E/sis \"claude\"; echo \"saída: $?\"\ntail -1 $E/rastros.jsonl | python3 -c 'import json,sys; d=json.load(sys.stdin); print(\"tokens:\", \"sim\" if (d[\"tokens_entrada\"] or 0) > 0 else \"nêo\", \"·\", d[\"status\"])'"
         }
       ],
       "saida": {
@@ -160,7 +160,7 @@
           "titulo": "E20 · Tokens de verdad",
           "min": "5 min",
           "texto": "Corre el bloque real justo después del ensayo.",
-          "pronto": "la última línea impresa empieza con <code>tokens: sim</code>; si aparece <code>tokens: não · erro</code>, el agente se quedó sin respuesta (límite de la sesión): espera y vuelve a correr."
+          "pronto": "la última línea impresa empieza con <code>tokens: sim</code>; si aparece <code>tokens: nêo · erro</code>, el agente se quedó sin respuesta (límite de la sesión): espera y vuelve a correr."
         },
         {
           "id": "e21",

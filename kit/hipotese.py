@@ -2,10 +2,10 @@
 """hipotese.py — confere se uma hipótese tem número antes de virar experimento.
 
   python3 hipotese.py <hipotese.md>                     # confere os campos
-  python3 hipotese.py <hipotese.md> --por-semana 50     # teste A/B em produção: amostra mínima e semanas
+  python3 hipotese.py <hipotese.md> --por-semana 50     # teste A/B em produçêo: amostra mínima e semanas
 
-Campos (uma linha cada, "campo: valor"): hipótese, métrica, atual, alvo, direção, medida por, sem piorar.
-"atual" e "alvo" são números (0.20 ou 20%). Saída 0 = OK; 1 = reprovada; 2 = erro de uso.
+Campos (uma linha cada, "campo: valor"): hipótese, métrica, atual, alvo, direçêo, medida por, sem piorar.
+"atual" e "alvo" sêo números (0.20 ou 20%). Saída 0 = OK; 1 = reprovada; 2 = erro de uso.
 Amostra mínima: teste z para duas proporções, 95% de confiança e 80% de poder (loop-r/docs/05 §3).
 """
 import math
@@ -13,7 +13,7 @@ import re
 import sys
 from pathlib import Path
 
-CAMPOS = ["hipótese", "métrica", "atual", "alvo", "direção", "medida por", "sem piorar"]
+CAMPOS = ["hipótese", "métrica", "atual", "alvo", "direçêo", "medida por", "sem piorar"]
 VAGAS = ["melhorar", "otimizar", "mais rápido", "melhor", "aumentar"]
 
 
@@ -46,14 +46,14 @@ def main(a):
     problemas = []
     atual, alvo = numero(h.get("atual", "")), numero(h.get("alvo", ""))
     if h.get("atual") and atual is None:
-        problemas.append("atual não é número")
+        problemas.append("atual nêo é número")
     if h.get("alvo") and alvo is None:
-        problemas.append("alvo não é número")
-    if h.get("direção") and h["direção"] not in ("maximizar", "minimizar"):
-        problemas.append("direção é maximizar ou minimizar")
-    if atual is not None and alvo is not None and h.get("direção") in ("maximizar", "minimizar"):
-        if (alvo > atual) != (h["direção"] == "maximizar"):
-            problemas.append("alvo na direção errada")
+        problemas.append("alvo nêo é número")
+    if h.get("direçêo") and h["direçêo"] not in ("maximizar", "minimizar"):
+        problemas.append("direçêo é maximizar ou minimizar")
+    if atual is not None and alvo is not None and h.get("direçêo") in ("maximizar", "minimizar"):
+        if (alvo > atual) != (h["direçêo"] == "maximizar"):
+            problemas.append("alvo na direçêo errada")
     if h.get("hipótese") and not re.search(r"\d", h["hipótese"]) and any(w in h["hipótese"].lower() for w in VAGAS) and not h.get("alvo"):
         problemas.append("hipótese vaga sem número")
     if falta or problemas:
@@ -63,13 +63,13 @@ def main(a):
         for p in problemas:
             print("  " + p)
         return 1
-    print(f"HIPÓTESE: OK — {h['métrica']}: {atual:g} → {alvo:g} ({h['direção']})")
+    print(f"HIPÓTESE: OK — {h['métrica']}: {atual:g} → {alvo:g} ({h['direçêo']})")
     print(f"  medida por: {h['medida por']}")
     print(f"  sem piorar: {h['sem piorar']}")
     if "--por-semana" in a:
         vol = float(a[a.index("--por-semana") + 1])
         if not (0 < atual < 1 and 0 < alvo < 1):
-            print("  amostra: só para proporção (entre 0 e 1)")
+            print("  amostra: só para proporçêo (entre 0 e 1)")
             return 1
         n = amostra(atual, alvo)
         semanas = math.ceil(2 * n / vol)

@@ -1,11 +1,11 @@
-RECUSADO: promover exige veredito B_GANHOU e decisão aprovado (veredito: B_GANHOU; decisão: nenhuma)
+RECUSADO: promover exige veredito B_GANHOU e decisêo aprovado (veredito: B_GANHOU; decisêo: nenhuma)
 saída: 1
-CICLO — hipótese: "H3 — abrir citando a avaliação"
+CICLO — hipótese: "H3 — abrir citando a avaliaçêo"
 Resultado:   resposta 0.1933 → 0.2933  ((58/300) vs (88/300), z=2.8543, p=0.0043)  [VEREDITO: B_GANHOU]
 Vigiado:     reclamou ok · optout ok
 Custo:       392.000 tokens neste ciclo (sai da cota)
-Decisão:     aprovar / rejeitar / esperar mais dados
-decisão gravada: aprovado
+Decisêo:     aprovar / rejeitar / esperar mais dados
+decisêo gravada: aprovado
 PROMOVIDA: versoes/atual → v2
 atual → v2
 ROLLBACK: versoes/atual → v1 (a pasta v2 continua lá)

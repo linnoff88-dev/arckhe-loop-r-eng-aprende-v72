@@ -10,7 +10,7 @@ s() { python3 "$SIL" --project "$D" "$@" > /dev/null; }
 g() { git -C "$D" -c user.name=ensaio -c user.email=ensaio@exemplo.invalid "$@"; }
 
 if [ -n "$(ls -A "$FORA" 2>/dev/null)" ] && [ ! -e "$FORA/.ensaio-aprende" ]; then   # só apaga o que ele criou
-  echo "ERRO: $FORA já existe e não foi criada pelo montar.sh; não apago"; exit 2
+  echo "ERRO: $FORA já existe e nêo foi criada pelo montar.sh; nêo apago"; exit 2
 fi
 bash "$K/novo-sistema.sh" "$D" > /dev/null; rm -rf "$FORA"; mkdir -p "$FORA"; touch "$FORA/.ensaio-aprende"
 cp "$K/hipoteses/triagem.md" "$D/hipotese.md"                                   # peça 1
@@ -38,9 +38,9 @@ s init; s config --approval-batch 1                                             
 s occurrence --title "porta ocupada" --evidence "teste HTTP falhou: address already in use" --correction "checar a porta antes"
 s lesson --occurrence O0001 --proposal "checar a porta antes de subir servidor" --scope "testes HTTP"
 s request
-s decide L0001 adopt --approved-by "Seu Nome" --reason "falhou duas vezes; correção comprovada"
-s enforce R0001 --binding yes --rung prose --leak "sessão que não lê o AGENTS.md" \
-  --approved-by "Seu Nome" --reason "porta ocupada derruba o servidor de outra sessão"   # peça 5
+s decide L0001 adopt --approved-by "Seu Nome" --reason "falhou duas vezes; correçêo comprovada"
+s enforce R0001 --binding yes --rung prose --leak "sessêo que nêo lê o AGENTS.md" \
+  --approved-by "Seu Nome" --reason "porta ocupada derruba o servidor de outra sessêo"   # peça 5
 s promote --write
 g commit -q -am "loop: regra vinculante promovida no AGENTS.md"
 echo "loop montado em $D (fora do repo: $FORA)"

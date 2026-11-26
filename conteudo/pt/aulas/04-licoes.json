@@ -2,11 +2,11 @@
   "slug": "licoes",
   "num": 4,
   "menu": "Lições",
-  "titulo": "Lições e regras: aprovação em lote e revisão de regra vencida",
+  "titulo": "Lições e regras: aprovaçêo em lote e revisêo de regra vencida",
   "titulo_curto": "Lições e regras",
   "minutos": 20,
-  "lead": "O outro lado do loop que aprende não é número: é a lição que o agente tira de um erro. Escrita direto no CLAUDE.md, ela só cresce, ninguém decide nem revisa. Nesta aula você usa o SIL Loop R: ocorrência, proposta, aprovação em lote com decisão explícita e revisão automática quando o arquivo da regra muda.",
-  "objetivo": "registrar ocorrência e proposta no SIL Loop R, aprovar em lote com decisão explícita e reabrir a regra quando o arquivo vigiado muda.",
+  "lead": "O outro lado do loop que aprende nêo é número: é a liçêo que o agente tira de um erro. Escrita direto no CLAUDE.md, ela só cresce, ninguém decide nem revisa. Nesta aula você usa o SIL Loop R: ocorrência, proposta, aprovaçêo em lote com decisêo explícita e revisêo automática quando o arquivo da regra muda.",
+  "objetivo": "registrar ocorrência e proposta no SIL Loop R, aprovar em lote com decisêo explícita e reabrir a regra quando o arquivo vigiado muda.",
   "competencias": [
     "registrar-ocorrencia-e-proposta",
     "aprovar-em-lote",
@@ -19,7 +19,7 @@
     },
     {
       "icone": "usuario",
-      "t": "Lote de aprovação: o agente propõe, a pessoa decide"
+      "t": "Lote de aprovaçêo: o agente propõe, a pessoa decide"
     },
     {
       "icone": "relogio",
@@ -27,26 +27,26 @@
     },
     {
       "icone": "lupa",
-      "t": "Revisão por arquivo mudado, idade e falta de uso"
+      "t": "Revisêo por arquivo mudado, idade e falta de uso"
     }
   ],
   "hero_alt": "Fichário metálico aberto com fichas organizadas por divisórias e uma ficha destacada com borda amarela.",
   "secoes": [
     {
       "tipo": "diagrama",
-      "titulo": "O caminho de uma lição no SIL Loop R",
+      "titulo": "O caminho de uma liçêo no SIL Loop R",
       "sub": "sil.py 1.1.0, SQLite local na pasta .sil do projeto. Nenhum comando envia mensagem nem chama modelo. Clique em cada bloco.",
       "nos": [
         {
           "icone": "x",
           "titulo": "Ocorrência",
           "sub": "o fato",
-          "detalhe": "O que aconteceu, com evidência, causa provável e correção. <code>occurrence --title --evidence --cause --correction</code>. Fato observado, hipótese de causa e correção comprovada ficam em campos separados."
+          "detalhe": "O que aconteceu, com evidência, causa provável e correçêo. <code>occurrence --title --evidence --cause --correction</code>. Fato observado, hipótese de causa e correçêo comprovada ficam em campos separados."
         },
         {
           "icone": "caneta",
           "titulo": "Proposta",
-          "sub": "a lição",
+          "sub": "a liçêo",
           "detalhe": "A regra generalizável, com escopo e, se quiser, arquivos vigiados: <code>lesson --occurrence O0001 --proposal --scope --watch serve.sh</code>. Nasce como <code>proposed</code>."
         },
         {
@@ -57,25 +57,25 @@
         },
         {
           "icone": "usuario",
-          "titulo": "Decisão",
+          "titulo": "Decisêo",
           "sub": "explícita",
           "forte": true,
-          "detalhe": "<code>decide ID adopt|trial|defer|reject --approved-by --reason</code>. Teste e adiamento exigem data futura; teste exige critério. O agente não inventa o aprovador. Silêncio nunca é aprovação."
+          "detalhe": "<code>decide ID adopt|trial|defer|reject --approved-by --reason</code>. Teste e adiamento exigem data futura; teste exige critério. O agente nêo inventa o aprovador. Silêncio nunca é aprovaçêo."
         },
         {
           "icone": "check",
           "titulo": "Regra",
           "sub": "ativa",
-          "detalhe": "Adotada, a proposta vira regra (R0001) e aparece no <code>context</code>. Ainda não está no arquivo de instrução: isso é a aula 5."
+          "detalhe": "Adotada, a proposta vira regra (R0001) e aparece no <code>context</code>. Ainda nêo está no arquivo de instruçêo: isso é a aula 5."
         },
         {
           "icone": "lupa",
-          "titulo": "Revisão",
+          "titulo": "Revisêo",
           "sub": "venceu?",
-          "detalhe": "A regra volta para revisão quando um arquivo vigiado muda (SHA-256), quando passa de review_days (30) ou depois de 5 releases sem citação. <code>review ID keep|revise|retire</code>, de novo com decisão explícita."
+          "detalhe": "A regra volta para revisêo quando um arquivo vigiado muda (SHA-256), quando passa de review_days (30) ou depois de 5 releases sem citaçêo. <code>review ID keep|revise|retire</code>, de novo com decisêo explícita."
         }
       ],
-      "volta": "revisão pode manter, reescrever ou aposentar a regra",
+      "volta": "revisêo pode manter, reescrever ou aposentar a regra",
       "legenda": "Fonte: sil-loop-r/skills/sil-loop-r/SKILL.md e sil.py --help (v1.1.0, commit 63746bd, 05/10/2026)."
     },
     {
@@ -86,7 +86,7 @@
         {
           "rot": "Terminal · ensaio sem custo",
           "icone": "terminal",
-          "conteudo": "SIL=~/projetos/sil-loop-r/sil.py   # git clone https://github.com/inematds/sil-loop-r ~/projetos/sil-loop-r\nE=${TMPDIR:-/tmp}/ensaio-aprende/a4; rm -rf $E; mkdir -p $E/p; cd $E/p && git init -q\necho 'python3 -m http.server 8000' > serve.sh\ns() { python3 $SIL --project $E/p \"$@\"; }\nj() { python3 -c 'import json,sys; d=json.load(sys.stdin); print(*[k+\"=\"+json.dumps(d.get(k),ensure_ascii=False) for k in sys.argv[1:]])' \"$@\"; }\ns init | j version; s config --approval-batch 2 | j approval_batch\ns occurrence --title \"porta ocupada\" --evidence \"teste HTTP falhou: address already in use\" \\\n  --cause \"servidor de outra sessão na mesma porta\" --correction \"checar a porta antes\" | j id\ns lesson --occurrence O0001 --proposal \"checar a porta antes de subir servidor\" --scope \"testes HTTP\" --watch serve.sh | j id status\ns occurrence --title \"push no remoto errado\" --evidence \"git push foi para origin, não para o remoto da conta\" | j id\ns lesson --occurrence O0002 --proposal \"conferir git remote -v antes do push\" --scope \"publicação\" | j id status\necho \"## fim da tarefa: chegou a hora do lote?\"; s status | j approval_due approval_reasons\ns request | j requested"
+          "conteudo": "SIL=~/projetos/sil-loop-r/sil.py   # git clone https://github.com/inematds/sil-loop-r ~/projetos/sil-loop-r\nE=${TMPDIR:-/tmp}/ensaio-aprende/a4; rm -rf $E; mkdir -p $E/p; cd $E/p && git init -q\necho 'python3 -m http.server 8000' > serve.sh\ns() { python3 $SIL --project $E/p \"$@\"; }\nj() { python3 -c 'import json,sys; d=json.load(sys.stdin); print(*[k+\"=\"+json.dumps(d.get(k),ensure_ascii=False) for k in sys.argv[1:]])' \"$@\"; }\ns init | j version; s config --approval-batch 2 | j approval_batch\ns occurrence --title \"porta ocupada\" --evidence \"teste HTTP falhou: address already in use\" \\\n  --cause \"servidor de outra sessêo na mesma porta\" --correction \"checar a porta antes\" | j id\ns lesson --occurrence O0001 --proposal \"checar a porta antes de subir servidor\" --scope \"testes HTTP\" --watch serve.sh | j id status\ns occurrence --title \"push no remoto errado\" --evidence \"git push foi para origin, nêo para o remoto da conta\" | j id\ns lesson --occurrence O0002 --proposal \"conferir git remote -v antes do push\" --scope \"publicaçêo\" | j id status\necho \"## fim da tarefa: chegou a hora do lote?\"; s status | j approval_due approval_reasons\ns request | j requested"
         }
       ],
       "saida": {
@@ -94,20 +94,20 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>version=\"1.1.0\"\napproval_batch=2\nid=\"O0001\"\nid=\"L0001\" status=\"proposed\"\nid=\"O0002\"\nid=\"L0002\" status=\"proposed\"\n## fim da tarefa: chegou a hora do lote?\napproval_due=true approval_reasons=[\"lote de novas propostas\"]\nrequested=true</pre><p>Com o lote em 2, a segunda proposta liga <code>approval_due</code>. Daqui em diante, o agente mostra à pessoa ID, proposta, evidência, escopo e decisão sugerida, e espera.</p>"
+            "html": "<pre>version=\"1.1.0\"\napproval_batch=2\nid=\"O0001\"\nid=\"L0001\" status=\"proposed\"\nid=\"O0002\"\nid=\"L0002\" status=\"proposed\"\n## fim da tarefa: chegou a hora do lote?\napproval_due=true approval_reasons=[\"lote de novas propostas\"]\nrequested=true</pre><p>Com o lote em 2, a segunda proposta liga <code>approval_due</code>. Daqui em diante, o agente mostra à pessoa ID, proposta, evidência, escopo e decisêo sugerida, e espera.</p>"
           }
         ]
       }
     },
     {
       "tipo": "codigo",
-      "titulo": "Decidir, e ver a regra voltar para revisão",
+      "titulo": "Decidir, e ver a regra voltar para revisêo",
       "sub": "Continua o bloco anterior. Uma proposta adotada, outra em teste por 14 dias; depois, o arquivo vigiado muda.",
       "blocos": [
         {
           "rot": "Terminal · ensaio sem custo",
           "icone": "terminal",
-          "conteudo": "SIL=~/projetos/sil-loop-r/sil.py\nE=${TMPDIR:-/tmp}/ensaio-aprende/a4; cd $E/p   # continua o bloco anterior\ns() { python3 $SIL --project $E/p \"$@\"; }\nj() { python3 -c 'import json,sys; d=json.load(sys.stdin); print(*[k+\"=\"+json.dumps(d.get(k),ensure_ascii=False) for k in sys.argv[1:]])' \"$@\"; }\nATE=$(python3 -c 'import datetime; print(datetime.date.today() + datetime.timedelta(days=14))')\ns decide L0001 adopt --approved-by \"Seu Nome\" --reason \"falhou duas vezes; correção comprovada\" | j status rule\ns decide L0002 trial --until $ATE --criterion \"nenhum push no remoto errado em 14 dias\" \\\n  --approved-by \"Seu Nome\" --reason \"uma ocorrência só\" | j status\ns check > /dev/null; echo \"check: $?\"\necho \"## o arquivo vigiado mudou\"; echo 'python3 -m http.server 8080' > serve.sh\ns check | j reviews; s check > /dev/null; echo \"check: $?\"\ns review R0001 keep --approved-by \"Seu Nome\" --reason \"a porta mudou; a regra continua valendo\" | j status\ns check > /dev/null; echo \"check: $?\""
+          "conteudo": "SIL=~/projetos/sil-loop-r/sil.py\nE=${TMPDIR:-/tmp}/ensaio-aprende/a4; cd $E/p   # continua o bloco anterior\ns() { python3 $SIL --project $E/p \"$@\"; }\nj() { python3 -c 'import json,sys; d=json.load(sys.stdin); print(*[k+\"=\"+json.dumps(d.get(k),ensure_ascii=False) for k in sys.argv[1:]])' \"$@\"; }\nATE=$(python3 -c 'import datetime; print(datetime.date.today() + datetime.timedelta(days=14))')\ns decide L0001 adopt --approved-by \"Seu Nome\" --reason \"falhou duas vezes; correçêo comprovada\" | j status rule\ns decide L0002 trial --until $ATE --criterion \"nenhum push no remoto errado em 14 dias\" \\\n  --approved-by \"Seu Nome\" --reason \"uma ocorrência só\" | j status\ns check > /dev/null; echo \"check: $?\"\necho \"## o arquivo vigiado mudou\"; echo 'python3 -m http.server 8080' > serve.sh\ns check | j reviews; s check > /dev/null; echo \"check: $?\"\ns review R0001 keep --approved-by \"Seu Nome\" --reason \"a porta mudou; a regra continua valendo\" | j status\ns check > /dev/null; echo \"check: $?\""
         }
       ],
       "saida": {
@@ -115,7 +115,7 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>status=\"adopted\" rule=\"R0001\"\nstatus=\"trial\"\ncheck: 0\n## o arquivo vigiado mudou\nreviews=[{\"id\": \"R0001\", \"reasons\": [\"arquivo alterado: serve.sh\"]}]\ncheck: 1\nstatus=\"active\"\ncheck: 0</pre><p><code>check</code> sai 0 sem pendência, 1 com pendência (aqui, a revisão) e 2 em erro. Saída 0 não prova que as regras são verdadeiras; só que não há nada vencido.</p>"
+            "html": "<pre>status=\"adopted\" rule=\"R0001\"\nstatus=\"trial\"\ncheck: 0\n## o arquivo vigiado mudou\nreviews=[{\"id\": \"R0001\", \"reasons\": [\"arquivo alterado: serve.sh\"]}]\ncheck: 1\nstatus=\"active\"\ncheck: 0</pre><p><code>check</code> sai 0 sem pendência, 1 com pendência (aqui, a revisêo) e 2 em erro. Saída 0 nêo prova que as regras sêo verdadeiras; só que nêo há nada vencido.</p>"
           },
           {
             "rot": "O erro comum",
@@ -134,7 +134,7 @@
           "sub": "diagnóstico",
           "texto": [
             "A análise sil-melhoramento/ANALISE.md contou 37 lições no CLAUDE.md do wifi, 101 linhas no FALHAS.md e 255 no LIMITES.md, 49 ainda \"aberto\".",
-            "Conclusão dela: 100% degrau \"prosa\", sem triagem, sem ID, sem citação e sem poda. A lição sobre porta ocupada tinha sido escrita três vezes em datas diferentes."
+            "Conclusêo dela: 100% degrau \"prosa\", sem triagem, sem ID, sem citaçêo e sem poda. A liçêo sobre porta ocupada tinha sido escrita três vezes em datas diferentes."
           ]
         },
         {
@@ -142,15 +142,15 @@
           "sub": "contagem",
           "texto": [
             "O contar-licoes.py, rodado na pasta do wifi: 164 lições no LESSONS.md (9 marcadas como repetidas, nenhuma com ID), 167 falhas e 424 limites, 115 ainda \"aberto\".",
-            "Em 14 dias os abertos mais que dobraram. É o que acontece quando a lição entra sem decisão e sem data de revisão."
+            "Em 14 dias os abertos mais que dobraram. É o que acontece quando a liçêo entra sem decisêo e sem data de revisêo."
           ]
         },
         {
           "titulo": "O que a análise propôs",
           "sub": "andamento",
           "texto": [
-            "Das recomendações da análise, só a promoção no SIL foi feita (v1.1.0, 05/10). As outras (hook de portas, relógio no LIMITES, IDs nas lições, sonda pós-tradução) seguem como proposta.",
-            "O SIL ainda não foi iniciado no wifi: o caso serve de diagnóstico, não de vitrine."
+            "Das recomendações da análise, só a promoçêo no SIL foi feita (v1.1.0, 05/10). As outras (hook de portas, relógio no LIMITES, IDs nas lições, sonda pós-traduçêo) seguem como proposta.",
+            "O SIL ainda nêo foi iniciado no wifi: o caso serve de diagnóstico, nêo de vitrine."
           ]
         }
       ]
@@ -158,7 +158,7 @@
     {
       "tipo": "codigo",
       "titulo": "Meça o seu",
-      "sub": "Rode na pasta do seu projeto. O script só conta linhas e marcas; não imprime conteúdo.",
+      "sub": "Rode na pasta do seu projeto. O script só conta linhas e marcas; nêo imprime conteúdo.",
       "blocos": [
         {
           "rot": "Terminal · no seu projeto",
@@ -171,7 +171,7 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026, pasta wifi)",
-            "html": "<pre>CLAUDE.md: 82 linhas, 19 lições na seção Lessons\nAGENTS.md: 10 linhas, 0 lições na seção Lessons\nLESSONS.md: 164 lições · 9 marcadas como repetidas · 0 com ID\nFALHAS.md: 167 falhas · 90 prompt · 85 infra (as duas contam quando a linha diz as duas)\nLIMITES.md: 424 limites · 115 ainda 'aberto'\nSIL Loop R: não iniciado nesta pasta\ndegrau: prosa — sem decisão registrada, sem data de revisão, sem citação</pre><p>As colunas prompt e infra somam mais que o total porque 8 linhas dizem as duas.</p>"
+            "html": "<pre>CLAUDE.md: 82 linhas, 19 lições na seçêo Lessons\nAGENTS.md: 10 linhas, 0 lições na seçêo Lessons\nLESSONS.md: 164 lições · 9 marcadas como repetidas · 0 com ID\nFALHAS.md: 167 falhas · 90 prompt · 85 infra (as duas contam quando a linha diz as duas)\nLIMITES.md: 424 limites · 115 ainda 'aberto'\nSIL Loop R: nêo iniciado nesta pasta\ndegrau: prosa — sem decisêo registrada, sem data de revisêo, sem citaçêo</pre><p>As colunas prompt e infra somam mais que o total porque 8 linhas dizem as duas.</p>"
           }
         ]
       }
@@ -192,7 +192,7 @@
           "id": "e11",
           "titulo": "E11 · Diagnóstico do seu loop de lições",
           "min": "10 min",
-          "texto": "Rode o contar-licoes.py no seu projeto e anote quantas lições existem, quantas repetidas e se há alguma com ID ou data de revisão.",
+          "texto": "Rode o contar-licoes.py no seu projeto e anote quantas lições existem, quantas repetidas e se há alguma com ID ou data de revisêo.",
           "pronto": "<code>python3 $K/contar-licoes.py .</code> imprime a linha <code>SIL Loop R:</code> e pelo menos uma linha de contagem."
         },
         {
@@ -209,33 +209,33 @@
       "titulo": "Teste da aula",
       "perguntas": [
         {
-          "p": "O lote de aprovação chegou e a pessoa não respondeu. O que o agente faz?",
+          "p": "O lote de aprovaçêo chegou e a pessoa nêo respondeu. O que o agente faz?",
           "opcoes": [
             "Adota tudo, porque o prazo venceu",
             "Rejeita tudo",
             "Adota só as de baixo risco",
-            "Não decide nada: silêncio não é aprovação"
+            "Nêo decide nada: silêncio nêo é aprovaçêo"
           ],
           "certa": 3,
-          "explica": "O prazo controla quando pedir decisão, não autoriza. Só se executa decide depois de decisão explícita para os IDs apresentados.",
+          "explica": "O prazo controla quando pedir decisêo, nêo autoriza. Só se executa decide depois de decisêo explícita para os IDs apresentados.",
           "ref": "diagrama",
           "cert": true
         },
         {
-          "p": "Qual destes faz uma regra ativa voltar para revisão no SIL?",
+          "p": "Qual destes faz uma regra ativa voltar para revisêo no SIL?",
           "opcoes": [
             "O arquivo vigiado com --watch mudou",
-            "Outra sessão leu a regra",
+            "Outra sessêo leu a regra",
             "O agente discordou da regra",
             "O projeto ganhou um commit qualquer"
           ],
           "certa": 0,
-          "explica": "O SIL guarda o SHA-256 dos arquivos vigiados; mudou, a regra entra em reviews. Também revisa por idade e por releases sem citação.",
+          "explica": "O SIL guarda o SHA-256 dos arquivos vigiados; mudou, a regra entra em reviews. Também revisa por idade e por releases sem citaçêo.",
           "ref": "codigo",
           "cert": true
         },
         {
-          "p": "O que um teste (trial) exige que a adoção não exige?",
+          "p": "O que um teste (trial) exige que a adoçêo nêo exige?",
           "opcoes": [
             "Dois aprovadores",
             "Data futura e critério de sucesso",
@@ -249,25 +249,25 @@
         {
           "p": "O check saiu com 0. O que isso garante?",
           "opcoes": [
-            "Que todas as regras continuam verdadeiras e foram seguidas pelo agente na última sessão",
+            "Que todas as regras continuam verdadeiras e foram seguidas pelo agente na última sessêo",
             "Que o agente seguiu as regras",
-            "Que não há decisão vencida, revisão sinalizada nem promoção desatualizada",
+            "Que nêo há decisêo vencida, revisêo sinalizada nem promoçêo desatualizada",
             "Que o AGENTS.md foi lido"
           ],
           "certa": 2,
-          "explica": "A própria skill avisa: saída 0 não prova que as regras são verdadeiras. Ela só diz que não há pendência.",
+          "explica": "A própria skill avisa: saída 0 nêo prova que as regras sêo verdadeiras. Ela só diz que nêo há pendência.",
           "ref": "codigo"
         },
         {
-          "p": "No caso do wifi, o que mostra que lição em prosa sozinha não fecha o loop?",
+          "p": "No caso do wifi, o que mostra que liçêo em prosa sozinha nêo fecha o loop?",
           "opcoes": [
-            "Os limites abertos mais que dobraram em 14 dias, sem data de decisão",
+            "Os limites abertos mais que dobraram em 14 dias, sem data de decisêo",
             "O LESSONS.md é pequeno e quase todas as lições já foram transformadas em hooks",
-            "Não existem falhas registradas",
+            "Nêo existem falhas registradas",
             "Todas as lições têm ID"
           ],
           "certa": 0,
-          "explica": "De 49 para 115 abertos entre 05/10 e 19/10. Sem decisão e revisão com data, a lista só cresce.",
+          "explica": "De 49 para 115 abertos entre 05/10 e 19/10. Sem decisêo e revisêo com data, a lista só cresce.",
           "ref": "passos"
         }
       ]
@@ -278,11 +278,11 @@
       "itens": [
         {
           "t": "Separar",
-          "texto": "Ocorrência é o fato, proposta é a lição, regra é a lição aprovada; cada uma com ID."
+          "texto": "Ocorrência é o fato, proposta é a liçêo, regra é a liçêo aprovada; cada uma com ID."
         },
         {
           "t": "Decidir em lote",
-          "texto": "O agente propõe e prepara o lote; a pessoa decide com nome e motivo; silêncio não aprova."
+          "texto": "O agente propõe e prepara o lote; a pessoa decide com nome e motivo; silêncio nêo aprova."
         },
         {
           "t": "Revisar",

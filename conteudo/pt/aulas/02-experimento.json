@@ -5,8 +5,8 @@
   "titulo": "Experimento: manter ou descartar por uma métrica só",
   "titulo_curto": "Keep ou discard",
   "minutos": 20,
-  "lead": "O desenho mais limpo de loop que melhora sozinho é curto: o agente muda uma coisa, um comando dá a nota, melhorou fica com commit, não melhorou volta com git reset, e tudo vira uma linha num arquivo. Nesta aula você roda esse ciclo com agentes falsos e depois com o Claude Code de verdade.",
-  "objetivo": "rodar um experimento no estilo autoresearch: o agente muda, uma métrica decide, git commit se melhorou e git reset se não.",
+  "lead": "O desenho mais limpo de loop que melhora sozinho é curto: o agente muda uma coisa, um comando dá a nota, melhorou fica com commit, nêo melhorou volta com git reset, e tudo vira uma linha num arquivo. Nesta aula você roda esse ciclo com agentes falsos e depois com o Claude Code de verdade.",
+  "objetivo": "rodar um experimento no estilo autoresearch: o agente muda, uma métrica decide, git commit se melhorou e git reset se nêo.",
   "competencias": [
     "rodar-experimento-keep-discard",
     "usar-git-como-desfazer",
@@ -47,14 +47,14 @@
           "icone": "robo",
           "titulo": "Agente",
           "sub": "uma mudança",
-          "detalhe": "O agente muda o sistema (aqui, regras.txt). Uma mudança por ciclo: com duas, você não sabe qual delas fez a nota mexer."
+          "detalhe": "O agente muda o sistema (aqui, regras.txt). Uma mudança por ciclo: com duas, você nêo sabe qual delas fez a nota mexer."
         },
         {
           "icone": "alvo",
           "titulo": "Medir",
           "sub": "uma métrica",
           "forte": true,
-          "detalhe": "O mesmo comando da base, no mesmo conjunto de casos. Uma métrica só decide; as outras, se houver, são \"sem piorar\" (aulas 3 e 6)."
+          "detalhe": "O mesmo comando da base, no mesmo conjunto de casos. Uma métrica só decide; as outras, se houver, sêo \"sem piorar\" (aulas 3 e 6)."
         },
         {
           "icone": "git",
@@ -70,13 +70,13 @@
         }
       ],
       "volta": "próximo ciclo parte do último keep",
-      "legenda": "No autoresearch o sistema é um script de treino e a métrica é a perda na validação; aqui, um classificador de triagem com 40 casos sintéticos.",
-      "dica": "Igual não é melhor: empate vai para discard. Senão o sistema acumula mudanças que não fazem nada."
+      "legenda": "No autoresearch o sistema é um script de treino e a métrica é a perda na validaçêo; aqui, um classificador de triagem com 40 casos sintéticos.",
+      "dica": "Igual nêo é melhor: empate vai para discard. Senêo o sistema acumula mudanças que nêo fazem nada."
     },
     {
       "tipo": "simfila",
       "titulo": "Uma fila de experimentos",
-      "sub": "Quatro ideias, uma por ciclo. Uma delas quebra na primeira execução (o agente fica sem resposta). Rode, interrompa e retome.",
+      "sub": "Quatro ideias, uma por ciclo. Uma delas quebra na primeira execuçêo (o agente fica sem resposta). Rode, interrompa e retome.",
       "tarefas": [
         "01 · sinônimos de reembolso",
         "02 · tirar \"senha\" de acesso",
@@ -99,14 +99,14 @@
         "parou": "Interrompido no meio: a mudança ficou solta no repo. O experimento.sh recusa começar com o repo sujo até você desfazer com git reset --hard.",
         "retoma": "Retomado do zero: a ideia interrompida roda inteira de novo, partindo do último keep.",
         "fim": "Fila vazia: cada ideia virou uma linha no results.tsv.",
-        "fimfalha": "Fila vazia. Uma ideia terminou em erro (agente sem resposta): é erro, nunca \"não melhorou\"."
+        "fimfalha": "Fila vazia. Uma ideia terminou em erro (agente sem resposta): é erro, nunca \"nêo melhorou\"."
       },
-      "legenda": "Simulação no navegador. O ensaio de verdade está logo abaixo."
+      "legenda": "Simulaçêo no navegador. O ensaio de verdade está logo abaixo."
     },
     {
       "tipo": "codigo",
       "titulo": "Ensaio: três agentes falsos",
-      "sub": "O kit cria um repo de triagem (v1) e roda três ciclos: um agente que melhora, um que piora e um que não muda a nota. Nenhum modelo é chamado.",
+      "sub": "O kit cria um repo de triagem (v1) e roda três ciclos: um agente que melhora, um que piora e um que nêo muda a nota. Nenhum modelo é chamado.",
       "blocos": [
         {
           "rot": "Terminal · ensaio sem custo",
@@ -119,11 +119,11 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>sistema criado em /tmp/ensaio-aprende/a2/sis (acerto: 0.700 (28/40))\nciclo 1 · keep · 0.700 → 0.800 · melhorou\nsaída: 0\nciclo 2 · discard · 0.800 → 0.700 · não melhorou\nsaída: 1\nciclo 3 · discard · 0.800 → 0.800 · não melhorou\nsaída: 1\n## results.tsv\nciclo\tbase\tnovo\tstatus\tdescricao\n1\t0.700\t0.800\tkeep\tsinonimos\n2\t0.800\t0.700\tdiscard\testraga\n3\t0.800\t0.800\tdiscard\tcomenta\n## git log\nkeep: sinonimos (0.700 → 0.800)\nv1: regras de base</pre><p>Coluna do hash do commit omitida (muda a cada rodada). O código de saída do experimento.sh diz o que aconteceu: 0 keep, 1 discard, 2 erro.</p>"
+            "html": "<pre>sistema criado em /tmp/ensaio-aprende/a2/sis (acerto: 0.700 (28/40))\nciclo 1 · keep · 0.700 → 0.800 · melhorou\nsaída: 0\nciclo 2 · discard · 0.800 → 0.700 · nêo melhorou\nsaída: 1\nciclo 3 · discard · 0.800 → 0.800 · nêo melhorou\nsaída: 1\n## results.tsv\nciclo\tbase\tnovo\tstatus\tdescricao\n1\t0.700\t0.800\tkeep\tsinonimos\n2\t0.800\t0.700\tdiscard\testraga\n3\t0.800\t0.800\tdiscard\tcomenta\n## git log\nkeep: sinonimos (0.700 → 0.800)\nv1: regras de base</pre><p>Coluna do hash do commit omitida (muda a cada rodada). O código de saída do experimento.sh diz o que aconteceu: 0 keep, 1 discard, 2 erro.</p>"
           },
           {
             "rot": "O erro comum",
-            "html": "<p>Tratar agente sem resposta como \"não melhorou\". Quando a assinatura bate no limite, o agente devolve vazio: o ciclo precisa sair como <b>erro</b> (código 2), senão a fila vira uma série de discards falsos e ninguém percebe que nada rodou. O <code>agente-claude.sh</code> sai com 1 quando a resposta não tem regras, e o experimento.sh registra <code>erro</code>.</p>"
+            "html": "<p>Tratar agente sem resposta como \"nêo melhorou\". Quando a assinatura bate no limite, o agente devolve vazio: o ciclo precisa sair como <b>erro</b> (código 2), senêo a fila vira uma série de discards falsos e ninguém percebe que nada rodou. O <code>agente-claude.sh</code> sai com 1 quando a resposta nêo tem regras, e o experimento.sh registra <code>erro</code>.</p>"
           }
         ]
       }
@@ -131,7 +131,7 @@
     {
       "tipo": "codigo",
       "titulo": "O mesmo ciclo com o Claude Code",
-      "sub": "Uma chamada pela sua assinatura (sai da cota): claude -p sem ferramentas recebe as regras e os casos errados e devolve um regras.txt novo. Quem decide é a medida, não o modelo.",
+      "sub": "Uma chamada pela sua assinatura (sai da cota): claude -p sem ferramentas recebe as regras e os casos errados e devolve um regras.txt novo. Quem decide é a medida, nêo o modelo.",
       "blocos": [
         {
           "rot": "Terminal · real, uma chamada",
@@ -141,7 +141,7 @@
         {
           "rot": "Arquivo · kit/agente-claude.sh",
           "icone": "arquivo",
-          "conteudo": "#!/usr/bin/env bash\n# agente-claude.sh — o agente REAL do experimento: o Claude Code (sem ferramentas) propõe um regras.txt novo.\n# Roda na pasta do repo, chamado pelo experimento.sh. Sai da cota da sua assinatura (uma chamada).\n# Resposta vazia (limite da sessão, erro) = ERRO, saída 1: nunca vira \"não mudou nada\".\nset -uo pipefail\nK=$(cd \"$(dirname \"$0\")\" && pwd)\nPEDIDO=\"Você melhora as regras de um classificador de mensagens de suporte. Formato de cada linha: 'categoria: palavra, palavra'; a primeira categoria cuja palavra aparece no texto vence; sem nenhuma, 'outros'.\nRegras atuais:\n$(cat regras.txt)\n\nCasos que o classificador errou:\n$(python3 \"$K/medir.py\" . --erros | tail -n +2)\n\nProponha UMA mudança que generalize (palavras que pessoas reais usariam), sem copiar frases inteiras dos casos.\nResponda SÓ com o conteúdo completo do novo regras.txt, sem explicação e sem cercas de código.\"\nJ=$(mktemp)\necho \"$PEDIDO\" | claude -p --tools \"\" --output-format json > \"$J\" 2>/dev/null\npython3 - \"$J\" <<'PY'\nimport json, os, sys\ntry:\n    d = json.load(open(sys.argv[1], encoding=\"utf-8\"))\nexcept Exception:\n    print(\"ERRO: resposta do claude não é JSON\"); sys.exit(1)\nr = (d.get(\"result\") or \"\").strip()\nlinhas = [l for l in r.splitlines() if not l.startswith(\"```\")]\nif d.get(\"is_error\") or not any(\":\" in l for l in linhas):\n    print(\"ERRO: sem regras na resposta (\" + (r[:80] or \"vazia\") + \")\"); sys.exit(1)\nu = d.get(\"usage\") or {}\nent = u.get(\"input_tokens\", 0) + u.get(\"cache_read_input_tokens\", 0) + u.get(\"cache_creation_input_tokens\", 0)\nif os.environ.get(\"TOKENS_ARQ\"):\n    open(os.environ[\"TOKENS_ARQ\"], \"w\").write(f\"{ent} {u.get('output_tokens', 0)}\\n\")\nopen(\"regras.txt\", \"w\", encoding=\"utf-8\").write(\"\\n\".join(linhas).strip() + \"\\n\")\nprint(f\"regras.txt reescrito ({len(linhas)} linhas)\")\nPY\nrc=$?; rm -f \"$J\"; exit $rc"
+          "conteudo": "#!/usr/bin/env bash\n# agente-claude.sh — o agente REAL do experimento: o Claude Code (sem ferramentas) propõe um regras.txt novo.\n# Roda na pasta do repo, chamado pelo experimento.sh. Sai da cota da sua assinatura (uma chamada).\n# Resposta vazia (limite da sessêo, erro) = ERRO, saída 1: nunca vira \"nêo mudou nada\".\nset -uo pipefail\nK=$(cd \"$(dirname \"$0\")\" && pwd)\nPEDIDO=\"Você melhora as regras de um classificador de mensagens de suporte. Formato de cada linha: 'categoria: palavra, palavra'; a primeira categoria cuja palavra aparece no texto vence; sem nenhuma, 'outros'.\nRegras atuais:\n$(cat regras.txt)\n\nCasos que o classificador errou:\n$(python3 \"$K/medir.py\" . --erros | tail -n +2)\n\nProponha UMA mudança que generalize (palavras que pessoas reais usariam), sem copiar frases inteiras dos casos.\nResponda SÓ com o conteúdo completo do novo regras.txt, sem explicaçêo e sem cercas de código.\"\nJ=$(mktemp)\necho \"$PEDIDO\" | claude -p --tools \"\" --output-format json > \"$J\" 2>/dev/null\npython3 - \"$J\" <<'PY'\nimport json, os, sys\ntry:\n    d = json.load(open(sys.argv[1], encoding=\"utf-8\"))\nexcept Exception:\n    print(\"ERRO: resposta do claude nêo é JSON\"); sys.exit(1)\nr = (d.get(\"result\") or \"\").strip()\nlinhas = [l for l in r.splitlines() if not l.startswith(\"```\")]\nif d.get(\"is_error\") or not any(\":\" in l for l in linhas):\n    print(\"ERRO: sem regras na resposta (\" + (r[:80] or \"vazia\") + \")\"); sys.exit(1)\nu = d.get(\"usage\") or {}\nent = u.get(\"input_tokens\", 0) + u.get(\"cache_read_input_tokens\", 0) + u.get(\"cache_creation_input_tokens\", 0)\nif os.environ.get(\"TOKENS_ARQ\"):\n    open(os.environ[\"TOKENS_ARQ\"], \"w\").write(f\"{ent} {u.get('output_tokens', 0)}\\n\")\nopen(\"regras.txt\", \"w\", encoding=\"utf-8\").write(\"\\n\".join(linhas).strip() + \"\\n\")\nprint(f\"regras.txt reescrito ({len(linhas)} linhas)\")\nPY\nrc=$?; rm -f \"$J\"; exit $rc"
         }
       ],
       "saida": {
@@ -162,7 +162,7 @@
         {
           "rot": "Terminal · ensaio, um repo seu",
           "icone": "terminal",
-          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nE=${TMPDIR:-/tmp}/ensaio-aprende/a2-adaptar; rm -rf $E; mkdir -p $E/repo; cd $E/repo\n# um repo \"seu\": sem results.tsv, sem .gitignore, com o próprio medidor\nprintf 'def dobro(x):\\n    return x + 2\\n' > calc.py\nprintf '1 2\\n2 4\\n5 10\\n0 0\\n' > casos.txt                      # entrada e esperado\ncat > medir.sh <<'FIM'\n# imprime \"<acerto> <ok> <total>\" (o experimento.sh lê o 1º número)\npython3 -c \"\nimport calc\nc = [l.split() for l in open('casos.txt') if l.strip()]\nok = sum(calc.dobro(int(a)) == int(b) for a, b in c)\nprint(f'{ok / len(c):.3f} {ok} {len(c)}')\"\nFIM\ngit init -q -b main; git add -A; git -c user.name=treino -c user.email=treino@exemplo.invalid commit -qm \"v1\"\nexport MEDIR=\"bash medir.sh\" MEDIDOR=\"casos.txt medir.sh\"      # as duas variáveis da adaptação\nbash $K/experimento.sh --congelar . $E/medidor.sha256; export GUARDA=$E/medidor.sha256\nAGENTE=\"echo '# revisado' >> calc.py\" bash $K/experimento.sh . \"comenta\"; echo \"saída: $?\"\nAGENTE=\"printf 'def dobro(x):\\n    return x * 2\\n' > calc.py\" bash $K/experimento.sh . \"corrige\"; echo \"saída: $?\"\nAGENTE=\"echo '3 7' >> casos.txt\" bash $K/experimento.sh . \"mexe nos casos\"; echo \"saída: $?\"\necho \"## results.tsv (criado pelo experimento.sh)\"; cut -f1,3- results.tsv\necho \"## git status (vazio = limpo)\"; git status --short"
+          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nE=${TMPDIR:-/tmp}/ensaio-aprende/a2-adaptar; rm -rf $E; mkdir -p $E/repo; cd $E/repo\n# um repo \"seu\": sem results.tsv, sem .gitignore, com o próprio medidor\nprintf 'def dobro(x):\\n    return x + 2\\n' > calc.py\nprintf '1 2\\n2 4\\n5 10\\n0 0\\n' > casos.txt                      # entrada e esperado\ncat > medir.sh <<'FIM'\n# imprime \"<acerto> <ok> <total>\" (o experimento.sh lê o 1º número)\npython3 -c \"\nimport calc\nc = [l.split() for l in open('casos.txt') if l.strip()]\nok = sum(calc.dobro(int(a)) == int(b) for a, b in c)\nprint(f'{ok / len(c):.3f} {ok} {len(c)}')\"\nFIM\ngit init -q -b main; git add -A; git -c user.name=treino -c user.email=treino@exemplo.invalid commit -qm \"v1\"\nexport MEDIR=\"bash medir.sh\" MEDIDOR=\"casos.txt medir.sh\"      # as duas variáveis da adaptaçêo\nbash $K/experimento.sh --congelar . $E/medidor.sha256; export GUARDA=$E/medidor.sha256\nAGENTE=\"echo '# revisado' >> calc.py\" bash $K/experimento.sh . \"comenta\"; echo \"saída: $?\"\nAGENTE=\"printf 'def dobro(x):\\n    return x * 2\\n' > calc.py\" bash $K/experimento.sh . \"corrige\"; echo \"saída: $?\"\nAGENTE=\"echo '3 7' >> casos.txt\" bash $K/experimento.sh . \"mexe nos casos\"; echo \"saída: $?\"\necho \"## results.tsv (criado pelo experimento.sh)\"; cut -f1,3- results.tsv\necho \"## git status (vazio = limpo)\"; git status --short"
         }
       ],
       "saida": {
@@ -170,11 +170,11 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>medidor congelado em /tmp/ensaio-aprende/a2-adaptar/medidor.sha256\nciclo 1 · discard · 0.250 → 0.250 · não melhorou\nsaída: 1\nciclo 2 · keep · 0.250 → 1.000 · melhorou\nsaída: 0\nciclo 3 · discard · 1.000 → 1.000 · DESCARTADO: mexeu no medidor (casos.txt medir.sh)\nsaída: 1\n## results.tsv (criado pelo experimento.sh)\nciclo\tbase\tnovo\tstatus\tdescricao\n1\t0.250\t0.250\tdiscard\tcomenta\n2\t0.250\t1.000\tkeep\tcorrige\n3\t1.000\t1.000\tdiscard\tmexe nos casos\n## git status (vazio = limpo)</pre><p>Coluna do hash do commit omitida. O ciclo 3 mostra a guarda da aula 6 valendo também para o medidor seu.</p>"
+            "html": "<pre>medidor congelado em /tmp/ensaio-aprende/a2-adaptar/medidor.sha256\nciclo 1 · discard · 0.250 → 0.250 · nêo melhorou\nsaída: 1\nciclo 2 · keep · 0.250 → 1.000 · melhorou\nsaída: 0\nciclo 3 · discard · 1.000 → 1.000 · DESCARTADO: mexeu no medidor (casos.txt medir.sh)\nsaída: 1\n## results.tsv (criado pelo experimento.sh)\nciclo\tbase\tnovo\tstatus\tdescricao\n1\t0.250\t0.250\tdiscard\tcomenta\n2\t0.250\t1.000\tkeep\tcorrige\n3\t1.000\t1.000\tdiscard\tmexe nos casos\n## git status (vazio = limpo)</pre><p>Coluna do hash do commit omitida. O ciclo 3 mostra a guarda da aula 6 valendo também para o medidor seu.</p>"
           },
           {
             "rot": "Os três requisitos",
-            "html": "<p><b>1. A medida.</b> <code>MEDIR=\"[seu comando]\"</code> roda na pasta do repo e imprime o número primeiro, numa linha. Ele recebe <code>--valor</code> e, se você usar ESCONDIDOS (aula 6), também <code>--casos [arquivo]</code>: o seu script precisa medir esse arquivo no lugar dos casos de sempre.</p><p><b>2. O que congelar.</b> <code>MEDIDOR=\"[arquivos]\"</code> lista o que a medida lê (casos e o próprio script). É o que o <code>--congelar</code> grava no manifesto.</p><p><b>3. O registro.</b> Se faltar, o experimento.sh cria o results.tsv com cabeçalho e o põe em <code>.git/info/exclude</code>, sem mexer no seu .gitignore. Rastro e manifesto ficam fora do repo; arquivo novo não ignorado dentro dele faz o ciclo seguinte sair com erro 2 (repo sujo).</p>"
+            "html": "<p><b>1. A medida.</b> <code>MEDIR=\"[seu comando]\"</code> roda na pasta do repo e imprime o número primeiro, numa linha. Ele recebe <code>--valor</code> e, se você usar ESCONDIDOS (aula 6), também <code>--casos [arquivo]</code>: o seu script precisa medir esse arquivo no lugar dos casos de sempre.</p><p><b>2. O que congelar.</b> <code>MEDIDOR=\"[arquivos]\"</code> lista o que a medida lê (casos e o próprio script). É o que o <code>--congelar</code> grava no manifesto.</p><p><b>3. O registro.</b> Se faltar, o experimento.sh cria o results.tsv com cabeçalho e o põe em <code>.git/info/exclude</code>, sem mexer no seu .gitignore. Rastro e manifesto ficam fora do repo; arquivo novo nêo ignorado dentro dele faz o ciclo seguinte sair com erro 2 (repo sujo).</p>"
           }
         ]
       }
@@ -214,13 +214,13 @@
         {
           "p": "A mudança deu exatamente a mesma nota da base. O que o ciclo faz?",
           "opcoes": [
-            "Keep, porque não piorou",
-            "Discard: empate não é melhora",
-            "Keep e marca para revisão",
+            "Keep, porque nêo piorou",
+            "Discard: empate nêo é melhora",
+            "Keep e marca para revisêo",
             "Roda de novo até mudar a nota"
           ],
           "certa": 1,
-          "explica": "Empate em keep acumula mudanças que não fazem nada e deixam o sistema mais difícil de ler. O experimento.sh exige novo maior que a base.",
+          "explica": "Empate em keep acumula mudanças que nêo fazem nada e deixam o sistema mais difícil de ler. O experimento.sh exige novo maior que a base.",
           "ref": "diagrama",
           "cert": true
         },
@@ -229,36 +229,36 @@
           "opcoes": [
             "Para gastar menos disco",
             "Porque o git exige",
-            "Para que a ideia ruim não seja testada de novo e para medir a taxa de acerto do loop",
-            "Não vai: só o keep é registrado; o discard some junto com o git reset, sem deixar rastro nenhum"
+            "Para que a ideia ruim nêo seja testada de novo e para medir a taxa de acerto do loop",
+            "Nêo vai: só o keep é registrado; o discard some junto com o git reset, sem deixar rastro nenhum"
           ],
           "certa": 2,
           "explica": "O registro das tentativas ruins é memória do loop, igual ao memoria/descartados.md do LOOP-R. É dele que sai a taxa de keep; o custo por keep a aula 7 tira do rastro (rastros.jsonl).",
           "ref": "codigo"
         },
         {
-          "p": "O agente ficou sem resposta (limite da sessão). Como o ciclo deve terminar?",
+          "p": "O agente ficou sem resposta (limite da sessêo). Como o ciclo deve terminar?",
           "opcoes": [
             "Erro, com código próprio",
             "Discard",
-            "Keep da versão anterior",
+            "Keep da versêo anterior",
             "Silêncio: tenta no próximo"
           ],
           "certa": 0,
-          "explica": "Resposta ausente é erro, nunca \"não melhorou\". Senão a fila produz discards falsos e ninguém vê que nada rodou.",
+          "explica": "Resposta ausente é erro, nunca \"nêo melhorou\". Senêo a fila produz discards falsos e ninguém vê que nada rodou.",
           "ref": "codigo",
           "cert": true
         },
         {
           "p": "Sobre os números do autoresearch (experimentos por hora, ganho no treino), o que este curso diz?",
           "opcoes": [
-            "São medidos pelo INEMA",
-            "São do artigo oficial revisado por pares, com código e dados publicados",
+            "Sêo medidos pelo INEMA",
+            "Sêo do artigo oficial revisado por pares, com código e dados publicados",
             "Valem para qualquer sistema",
-            "São relatados por fontes secundárias, sem confirmação"
+            "Sêo relatados por fontes secundárias, sem confirmaçêo"
           ],
           "certa": 3,
-          "explica": "A pesquisa da formação só achou o desenho e os números em fontes secundárias. O desenho (métrica única, orçamento fixo, git como desfazer) é o que se aproveita.",
+          "explica": "A pesquisa da formaçêo só achou o desenho e os números em fontes secundárias. O desenho (métrica única, orçamento fixo, git como desfazer) é o que se aproveita.",
           "ref": "links"
         }
       ]

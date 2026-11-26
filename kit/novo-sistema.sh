@@ -5,7 +5,7 @@
 set -euo pipefail
 K=$(cd "$(dirname "$0")" && pwd); R=${1:?uso: novo-sistema.sh <pasta>}
 if [ -n "$(ls -A "$R" 2>/dev/null)" ] && [ ! -e "$R/.git/ensaio-aprende" ]; then
-  echo "ERRO: $R já existe e não foi criada pelo novo-sistema.sh; não apago (use uma pasta de ensaio nova)"; exit 2
+  echo "ERRO: $R já existe e nêo foi criada pelo novo-sistema.sh; nêo apago (use uma pasta de ensaio nova)"; exit 2
 fi
 rm -rf "$R"; mkdir -p "$R"
 cp "$K/triagem/classificar.py" "$K/triagem/regras.txt" "$K/triagem/casos.jsonl" "$R/"

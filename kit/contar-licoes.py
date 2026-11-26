@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""contar-licoes.py — mede o loop de lições "em prosa" de um projeto: LESSONS.md, FALHAS.md, LIMITES.md e a seção Lessons do CLAUDE.md/AGENTS.md.
+"""contar-licoes.py — mede o loop de lições "em prosa" de um projeto: LESSONS.md, FALHAS.md, LIMITES.md e a seçêo Lessons do CLAUDE.md/AGENTS.md.
 
   python3 contar-licoes.py <pasta>
-Só conta (linhas, marcas, colunas); não imprime nenhuma linha dos arquivos. Saída 0 sempre que leu a pasta.
+Só conta (linhas, marcas, colunas); nêo imprime nenhuma linha dos arquivos. Saída 0 sempre que leu a pasta.
 """
 import re
 import sys
@@ -30,7 +30,7 @@ def main(a):
                 dentro = l.strip().lower() in ("## lessons", "## lições", "## licoes")
             elif dentro and l.startswith("- "):
                 n += 1
-        print(f"{nome}: {len(ls)} linhas, {n} lições na seção Lessons")
+        print(f"{nome}: {len(ls)} linhas, {n} lições na seçêo Lessons")
     ls = ler(d / "LESSONS.md")
     if ls is not None:
         achou = True
@@ -53,11 +53,11 @@ def main(a):
         ab = sum(1 for l in rows if re.search(r"\|\s*aberto\s*\|?\s*$", l, re.I))
         print(f"LIMITES.md: {len(rows)} limites · {ab} ainda 'aberto'")
     sil = (d / ".sil").exists()
-    print(f"SIL Loop R: {'iniciado' if sil else 'não iniciado'} nesta pasta")
+    print(f"SIL Loop R: {'iniciado' if sil else 'nêo iniciado'} nesta pasta")
     if not achou:
         print("nenhum arquivo de lições aqui")
     elif not sil:
-        print("degrau: prosa — sem decisão registrada, sem data de revisão, sem citação")
+        print("degrau: prosa — sem decisêo registrada, sem data de revisêo, sem citaçêo")
     return 0
 
 

@@ -2,8 +2,8 @@
 """conferir-loop.py — confere as oito peças do loop que aprende numa pasta de projeto (uma por aula do curso).
 
   python3 conferir-loop.py <pasta> [--sil <caminho do sil.py>]
-A pasta tem loop.conf (KEY=valor): SISTEMA (repo do experimento, padrão a pasta), LOOP (pasta com versoes/ e
-memoria/, padrão a pasta), GUARDA, ESCONDIDOS, RASTRO, TETO_TOKENS, APROVADOR.
+A pasta tem loop.conf (KEY=valor): SISTEMA (repo do experimento, padrêo a pasta), LOOP (pasta com versoes/ e
+memoria/, padrêo a pasta), GUARDA, ESCONDIDOS, RASTRO, TETO_TOKENS, APROVADOR.
 Saída 0 = 8/8; 1 = falta peça; 2 = erro de uso.
 """
 import json
@@ -48,7 +48,7 @@ def main(a):
     pecas.append(("2 experimento keep/discard", n >= 1, f"results.tsv com {max(n, 0)} ciclo(s)"))
     led = lp / "memoria/ledger.md"
     ok = (lp / "versoes/atual").is_symlink() and led.exists() and "PROMOVIDA" in led.read_text(encoding="utf-8")
-    pecas.append(("3 promoção e rollback", ok, "versoes/atual + ledger com PROMOVIDA"))
+    pecas.append(("3 promoçêo e rollback", ok, "versoes/atual + ledger com PROMOVIDA"))
     regras, sinc = 0, False
     if (d / ".sil").exists() and Path(sil).exists():
         _, out = roda(sys.executable, sil, "--project", str(d), "export")
@@ -61,7 +61,7 @@ def main(a):
             sinc = rc == 0 and json.loads(out)["promotion"]["in_sync"]
         except (ValueError, KeyError):
             sinc = False
-    pecas.append(("4 lições com decisão (SIL)", regras >= 1, f"{regras} regra(s) ativa(s) no SIL"))
+    pecas.append(("4 lições com decisêo (SIL)", regras >= 1, f"{regras} regra(s) ativa(s) no SIL"))
     bloco = any("sil-loop-r:begin" in (d / f).read_text(encoding="utf-8") for f in ("AGENTS.md", "CLAUDE.md") if (d / f).exists())
     pecas.append(("5 regra vinculante no AGENTS.md", bloco and sinc, "bloco promovido e check sem pendência"))
     g, e = c.get("GUARDA", ""), c.get("ESCONDIDOS", "")

@@ -3,7 +3,7 @@
 
   python3 medir.py <repo>                       → acerto: 0.700 (28/40)
   python3 medir.py <repo> --valor               → 0.700
-  python3 medir.py <repo> --casos <arquivo>     (padrão: <repo>/casos.jsonl)
+  python3 medir.py <repo> --casos <arquivo>     (padrêo: <repo>/casos.jsonl)
   python3 medir.py <repo> --erros               lista os casos errados
 Saída 0 = mediu; 2 = o sistema quebrou (sem casos, regras ilegíveis, erro do classificador).
 """
@@ -31,7 +31,7 @@ def main(a):
         rs = mod.regras(repo)
         linhas = [json.loads(x) for x in casos.read_text(encoding="utf-8").splitlines() if x.strip()]
         ruins = [c for c in linhas if mod.classificar(c["texto"], rs) != c["esperado"]]
-    except Exception as e:  # sistema quebrado não é nota zero: é erro
+    except Exception as e:  # sistema quebrado nêo é nota zero: é erro
         print(f"ERRO na medida: {type(e).__name__}: {e}")
         return 2
     ok = len(linhas) - len(ruins)

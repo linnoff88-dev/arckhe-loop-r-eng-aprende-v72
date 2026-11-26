@@ -12,7 +12,7 @@ ok = sum(calc.dobro(int(a)) == int(b) for a, b in c)
 print(f'{ok / len(c):.3f} {ok} {len(c)}')"
 FIM
 git init -q -b main; git add -A; git -c user.name=treino -c user.email=treino@exemplo.invalid commit -qm "v1"
-export MEDIR="bash medir.sh" MEDIDOR="casos.txt medir.sh"      # as duas variáveis da adaptação
+export MEDIR="bash medir.sh" MEDIDOR="casos.txt medir.sh"      # as duas variáveis da adaptaçêo
 bash $K/experimento.sh --congelar . $E/medidor.sha256; export GUARDA=$E/medidor.sha256
 AGENTE="echo '# revisado' >> calc.py" bash $K/experimento.sh . "comenta"; echo "saída: $?"
 AGENTE="printf 'def dobro(x):\n    return x * 2\n' > calc.py" bash $K/experimento.sh . "corrige"; echo "saída: $?"

@@ -3,7 +3,7 @@
 
   python3 custo-ciclo.py <rastros.jsonl> [--teto TOKENS_POR_CICLO] [--sem-keep N] [--erros-iguais N]
 Alertas no espírito do meta-agente do LOOP-R (.claude/agents/meta-agente.md): ciclo acima de 80% do teto,
-N ciclos seguidos sem keep, N erros seguidos com o mesmo motivo (laço de erro). Só relata; não age.
+N ciclos seguidos sem keep, N erros seguidos com o mesmo motivo (laço de erro). Só relata; nêo age.
 Saída 0 = sem alerta; 1 = há alerta; 2 = erro de uso.
 """
 import json
@@ -26,7 +26,7 @@ def main(a):
     for c in cs:
         t = (c.get("tokens_entrada") or 0) + (c.get("tokens_saida") or 0)
         total += t
-        tt = f"{t}" if c.get("tokens_entrada") is not None else "não informado"
+        tt = f"{t}" if c.get("tokens_entrada") is not None else "nêo informado"
         print(f"{c['ciclo']:>5}  {c['status']:<7}  {c['segundos']:>8}  {tt:>17}  {c['motivo'][:48]}")
         if teto and t > 0.8 * teto:
             alertas.append(f"ciclo {c['ciclo']} usou {100 * t // teto}% do teto de {teto} tokens")

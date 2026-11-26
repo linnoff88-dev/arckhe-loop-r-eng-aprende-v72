@@ -5,8 +5,8 @@
   "titulo": "Montar o LOOP-R no seu sistema",
   "titulo_curto": "Montar o loop",
   "minutos": 20,
-  "lead": "As sete aulas deram as peças: hipótese, experimento, promoção, lições, regra vinculante, medidor protegido e rastro. Falta juntar no seu sistema e conferir que nenhuma ficou de fora. Esta aula também fecha a formação: o que cada um dos seis cursos põe no loop e o plano datado para montar o seu.",
-  "objetivo": "conferir as oito peças do loop que aprende no seu projeto, fechar o que falta e fechar a formação com o plano datado.",
+  "lead": "As sete aulas deram as peças: hipótese, experimento, promoçêo, lições, regra vinculante, medidor protegido e rastro. Falta juntar no seu sistema e conferir que nenhuma ficou de fora. Esta aula também fecha a formaçêo: o que cada um dos seis cursos põe no loop e o plano datado para montar o seu.",
+  "objetivo": "conferir as oito peças do loop que aprende no seu projeto, fechar o que falta e fechar a formaçêo com o plano datado.",
   "competencias": [
     "conferir-pecas-do-loop",
     "montar-loop-que-aprende",
@@ -23,7 +23,7 @@
     },
     {
       "icone": "lista",
-      "t": "A formação inteira em seis cursos"
+      "t": "A formaçêo inteira em seis cursos"
     },
     {
       "icone": "calendario",
@@ -41,7 +41,7 @@
           "icone": "alvo",
           "titulo": "Hipótese",
           "sub": "aula 1",
-          "detalhe": "hipotese.md na raiz passa no hipotese.py: métrica, atual, alvo, direção, medida e sem-piorar."
+          "detalhe": "hipotese.md na raiz passa no hipotese.py: métrica, atual, alvo, direçêo, medida e sem-piorar."
         },
         {
           "icone": "git",
@@ -51,7 +51,7 @@
         },
         {
           "icone": "portao",
-          "titulo": "Promoção",
+          "titulo": "Promoçêo",
           "sub": "aula 3",
           "detalhe": "versoes/atual é um link e o ledger tem uma linha PROMOVIDA."
         },
@@ -87,8 +87,8 @@
           "detalhe": "TETO_TOKENS e APROVADOR no loop.conf: as perguntas 4 e 5 do /loop-r iniciar."
         }
       ],
-      "volta": "o próximo ciclo parte da versão promovida e das regras em vigor",
-      "legenda": "conferir-loop.py lê loop.conf na raiz do projeto. Ele confere a presença e a coerência das peças, não a qualidade da sua hipótese."
+      "volta": "o próximo ciclo parte da versêo promovida e das regras em vigor",
+      "legenda": "conferir-loop.py lê loop.conf na raiz do projeto. Ele confere a presença e a coerência das peças, nêo a qualidade da sua hipótese."
     },
     {
       "tipo": "codigo",
@@ -103,7 +103,7 @@
         {
           "rot": "Arquivo · kit/loop.conf.exemplo",
           "icone": "arquivo",
-          "conteudo": "# loop.conf — o que o conferir-loop.py lê (KEY=valor; ~ e $HOME valem). Fica na raiz do seu projeto.\nSISTEMA=~/projetos/<seu-sistema>          # repo onde o experimento roda (tem results.tsv); padrão: esta pasta\nLOOP=~/loops/<seu-loop>/promocao           # versoes/ + memoria/ledger.md (aula 3); fora do repo do sistema\nGUARDA=~/loops/<seu-loop>/medidor.sha256   # manifesto do medidor (aula 6); fora do repo\nESCONDIDOS=~/loops/<seu-loop>/escondidos.jsonl\nRASTRO=~/loops/<seu-loop>/rastros.jsonl    # uma linha por ciclo (aula 7)\nTETO_TOKENS=<tokens por ciclo, a partir da sua medição real>\nAPROVADOR=<quem aprova a promoção (nível L1)>"
+          "conteudo": "# loop.conf — o que o conferir-loop.py lê (KEY=valor; ~ e $HOME valem). Fica na raiz do seu projeto.\nSISTEMA=~/projetos/<seu-sistema>          # repo onde o experimento roda (tem results.tsv); padrêo: esta pasta\nLOOP=~/loops/<seu-loop>/promocao           # versoes/ + memoria/ledger.md (aula 3); fora do repo do sistema\nGUARDA=~/loops/<seu-loop>/medidor.sha256   # manifesto do medidor (aula 6); fora do repo\nESCONDIDOS=~/loops/<seu-loop>/escondidos.jsonl\nRASTRO=~/loops/<seu-loop>/rastros.jsonl    # uma linha por ciclo (aula 7)\nTETO_TOKENS=<tokens por ciclo, a partir da sua mediçêo real>\nAPROVADOR=<quem aprova a promoçêo (nível L1)>"
         }
       ],
       "saida": {
@@ -111,56 +111,56 @@
         "abas": [
           {
             "rot": "Saída capturada (19/10/2026)",
-            "html": "<pre>## uma pasta sem nada\nsaída: 1\nLOOP: 0/8 — FALTAM 1, 2, 3, 4, 5, 6, 7, 8\n## as oito peças montadas pelo kit (o que as aulas 1 a 7 fizeram)\nOK     1 hipótese com número  (hipotese.md passa no hipotese.py)\nOK     2 experimento keep/discard  (results.tsv com 1 ciclo(s))\nOK     3 promoção e rollback  (versoes/atual + ledger com PROMOVIDA)\nOK     4 lições com decisão (SIL)  (1 regra(s) ativa(s) no SIL)\nOK     5 regra vinculante no AGENTS.md  (bloco promovido e check sem pendência)\nOK     6 medidor fora do alcance  (GUARDA confere e ESCONDIDOS fora da pasta)\nOK     7 rastro por ciclo  (RASTRO com pelo menos um ciclo)\nOK     8 teto e aprovador  (TETO_TOKENS e APROVADOR no loop.conf)\nLOOP: 8/8 — PRONTO\nsaída: 0\n## o loop.conf que o conferir lê\nLOOP=/tmp/ensaio-aprende/a8/meu-loop-fora/promocao\nGUARDA=/tmp/ensaio-aprende/a8/meu-loop-fora/medidor.sha256\nESCONDIDOS=/tmp/ensaio-aprende/a8/meu-loop-fora/escondidos.jsonl\nRASTRO=/tmp/ensaio-aprende/a8/meu-loop-fora/rastros.jsonl\nTETO_TOKENS=50000\nAPROVADOR=Seu Nome</pre><p>O que fica fora do repo do sistema (medidor, escondidos, rastro, versões) vai para uma pasta irmã: o agente que mexe no sistema não alcança o que o julga.</p>"
+            "html": "<pre>## uma pasta sem nada\nsaída: 1\nLOOP: 0/8 — FALTAM 1, 2, 3, 4, 5, 6, 7, 8\n## as oito peças montadas pelo kit (o que as aulas 1 a 7 fizeram)\nOK     1 hipótese com número  (hipotese.md passa no hipotese.py)\nOK     2 experimento keep/discard  (results.tsv com 1 ciclo(s))\nOK     3 promoçêo e rollback  (versoes/atual + ledger com PROMOVIDA)\nOK     4 lições com decisêo (SIL)  (1 regra(s) ativa(s) no SIL)\nOK     5 regra vinculante no AGENTS.md  (bloco promovido e check sem pendência)\nOK     6 medidor fora do alcance  (GUARDA confere e ESCONDIDOS fora da pasta)\nOK     7 rastro por ciclo  (RASTRO com pelo menos um ciclo)\nOK     8 teto e aprovador  (TETO_TOKENS e APROVADOR no loop.conf)\nLOOP: 8/8 — PRONTO\nsaída: 0\n## o loop.conf que o conferir lê\nLOOP=/tmp/ensaio-aprende/a8/meu-loop-fora/promocao\nGUARDA=/tmp/ensaio-aprende/a8/meu-loop-fora/medidor.sha256\nESCONDIDOS=/tmp/ensaio-aprende/a8/meu-loop-fora/escondidos.jsonl\nRASTRO=/tmp/ensaio-aprende/a8/meu-loop-fora/rastros.jsonl\nTETO_TOKENS=50000\nAPROVADOR=Seu Nome</pre><p>O que fica fora do repo do sistema (medidor, escondidos, rastro, versões) vai para uma pasta irmê: o agente que mexe no sistema nêo alcança o que o julga.</p>"
           }
         ]
       }
     },
     {
       "tipo": "passos",
-      "titulo": "A formação em seis cursos",
+      "titulo": "A formaçêo em seis cursos",
       "sub": "O que cada curso põe no seu loop. Este é o último.",
       "passos": [
         {
           "titulo": "Base",
           "sub": "curso 0",
           "texto": [
-            "As cinco peças do loop (objetivo, estado, ação, verificação, parada), o harness, os motores de loop de hoje, o LOOP-R e o critério de pronto de 0 a 4."
+            "As cinco peças do loop (objetivo, estado, açêo, verificaçêo, parada), o harness, os motores de loop de hoje, o LOOP-R e o critério de pronto de 0 a 4."
           ]
         },
         {
-          "titulo": "Verificação",
+          "titulo": "Verificaçêo",
           "sub": "curso 1",
           "texto": [
-            "Quem diz que acabou não pode ser quem fez: avaliador cético, testes congelados, atalhos, conjunto de ouro, juiz calibrado e o portão em camadas."
+            "Quem diz que acabou nêo pode ser quem fez: avaliador cético, testes congelados, atalhos, conjunto de ouro, juiz calibrado e o portêo em camadas."
           ]
         },
         {
-          "titulo": "Execução longa",
+          "titulo": "Execuçêo longa",
           "sub": "curso 2",
           "texto": [
-            "O kit de sete arquivos, goal.md nível 3+, contexto em faixas, handoff que confere, loop headless com teto e a medição da sessão."
+            "O kit de sete arquivos, goal.md nível 3+, contexto em faixas, handoff que confere, loop headless com teto e a mediçêo da sessêo."
           ]
         },
         {
           "titulo": "Multiagente",
           "sub": "curso 3",
           "texto": [
-            "Quando não usar, subagentes com retorno curto, gerador × avaliador, worktrees, filas sem colisão e o time Claude + Codex."
+            "Quando nêo usar, subagentes com retorno curto, gerador × avaliador, worktrees, filas sem colisêo e o time Claude + Codex."
           ]
         },
         {
           "titulo": "Segurança",
           "sub": "curso 4",
           "texto": [
-            "Tríade letal, Regra de Dois, injeção pelo conteúdo lido, permissões por etapa, hooks de guarda, sandbox e a porta do irreversível."
+            "Tríade letal, Regra de Dois, injeçêo pelo conteúdo lido, permissões por etapa, hooks de guarda, sandbox e a porta do irreversível."
           ]
         },
         {
           "titulo": "O loop que aprende",
           "sub": "curso 5",
           "texto": [
-            "Hipótese com número, keep/discard, promoção e rollback, lições que viram regra vinculante, medidor protegido e custo por ciclo."
+            "Hipótese com número, keep/discard, promoçêo e rollback, lições que viram regra vinculante, medidor protegido e custo por ciclo."
           ]
         }
       ]
@@ -189,7 +189,7 @@
           "id": "e24",
           "titulo": "E24 · O primeiro ciclo de verdade",
           "min": "1 h",
-          "texto": "Com o loop 8/8, rode um ciclo real com o seu agente, guarda e escondidos ligados e o rastro gravando (MEDIR e MEDIDOR exportados como na aula 2, se o medidor é seu). Se der keep, faça o cartão e peça a aprovação a quem decide.",
+          "texto": "Com o loop 8/8, rode um ciclo real com o seu agente, guarda e escondidos ligados e o rastro gravando (MEDIR e MEDIDOR exportados como na aula 2, se o medidor é seu). Se der keep, faça o cartêo e peça a aprovaçêo a quem decide.",
           "pronto": "o results.tsv do seu sistema ganha uma linha nova, o rastro ganha uma linha com tokens, e há um decisao.md com nome e data se o ciclo deu keep."
         }
       ]
@@ -214,7 +214,7 @@
           "quando": "Dias 2 e 3",
           "titulo": "Decidir",
           "sub": "aulas 3, 4 e 5",
-          "saida": "Promoção com rollback e lições que viram regra.",
+          "saida": "Promoçêo com rollback e lições que viram regra.",
           "passo": "Requer o dia 1. Vereditos refeitos, SIL no seu projeto e uma regra vinculante."
         },
         {
@@ -237,7 +237,7 @@
         }
       ],
       "resultado": {
-        "titulo": "Ao final da formação",
+        "titulo": "Ao final da formaçêo",
         "texto": "Um loop que trabalha horas, se verifica, roda com segurança e melhora com número: muda, mede, guarda o que ganhou, volta atrás quando piora e lembra do que aprendeu.",
         "total": "24 exercícios"
       },
@@ -263,7 +263,7 @@
           "aula": "experimento"
         },
         {
-          "titulo": "Aula 3 · Promoção e rollback",
+          "titulo": "Aula 3 · Promoçêo e rollback",
           "aula": "promocao"
         },
         {
@@ -309,11 +309,11 @@
           "opcoes": [
             "Que a hipótese é boa",
             "Que o próximo ciclo vai dar keep",
-            "Que o agente não trapaceia",
-            "Que as oito peças existem e estão ligadas"
+            "Que o agente nêo trapaceia",
+            "Que as oito peças existem e estêo ligadas"
           ],
           "certa": 3,
-          "explica": "Ele confere presença e coerência (arquivos, links, hashes, check do SIL), não a qualidade das escolhas.",
+          "explica": "Ele confere presença e coerência (arquivos, links, hashes, check do SIL), nêo a qualidade das escolhas.",
           "ref": "diagrama",
           "cert": true
         },
@@ -321,25 +321,25 @@
           "p": "Por que medidor, escondidos, rastro e versões ficam fora do repo do sistema?",
           "opcoes": [
             "Para economizar espaço",
-            "Para o agente que muda o sistema não alcançar o que o julga",
-            "Porque o git não aceita arquivos JSONL grandes nem links simbólicos",
+            "Para o agente que muda o sistema nêo alcançar o que o julga",
+            "Porque o git nêo aceita arquivos JSONL grandes nem links simbólicos",
             "Para rodar mais rápido"
           ],
           "certa": 1,
-          "explica": "É a lição da aula 6 aplicada ao desenho inteiro: quem faz não mexe no juiz.",
+          "explica": "É a liçêo da aula 6 aplicada ao desenho inteiro: quem faz nêo mexe no juiz.",
           "ref": "codigo",
           "cert": true
         },
         {
-          "p": "Qual curso da formação é dono de \"avaliador separado, testes congelados e juiz calibrado\"?",
+          "p": "Qual curso da formaçêo é dono de \"avaliador separado, testes congelados e juiz calibrado\"?",
           "opcoes": [
-            "Curso 1, Verificação e evals",
-            "Curso 2, Execução longa",
+            "Curso 1, Verificaçêo e evals",
+            "Curso 2, Execuçêo longa",
             "Curso 4, Segurança",
             "Curso 5, este"
           ],
           "certa": 0,
-          "explica": "Este curso aponta para lá na aula 6. Cada assunto tem um dono na formação.",
+          "explica": "Este curso aponta para lá na aula 6. Cada assunto tem um dono na formaçêo.",
           "ref": "passos"
         },
         {
@@ -348,7 +348,7 @@
             "Porque é mais fácil e rápido, e o gerador do plano precisa dessa ordem",
             "Porque o gerador exige",
             "Porque promover sem medidor protegido é promover o atalho",
-            "Não importa a ordem"
+            "Nêo importa a ordem"
           ],
           "certa": 2,
           "explica": "Um loop montado com medidor aberto guarda como melhoria tudo o que sobe a nota, inclusive decorar e mexer nos casos.",
@@ -358,19 +358,19 @@
     },
     {
       "tipo": "resumo",
-      "titulo": "A formação em três frases",
+      "titulo": "A formaçêo em três frases",
       "itens": [
         {
           "t": "Trabalhar e conferir",
-          "texto": "O loop roda horas com estado fora do modelo, teto e parada, e quem diz que acabou é um portão que o agente não alcança."
+          "texto": "O loop roda horas com estado fora do modelo, teto e parada, e quem diz que acabou é um portêo que o agente nêo alcança."
         },
         {
           "t": "Em time e com segurança",
-          "texto": "Subagentes e filas só quando ajudam; nenhuma sessão junta dado privado, conteúdo não confiável e saída para fora."
+          "texto": "Subagentes e filas só quando ajudam; nenhuma sessêo junta dado privado, conteúdo nêo confiável e saída para fora."
         },
         {
           "t": "Aprender",
-          "texto": "Muda uma coisa, mede, guarda o que ganhou, volta atrás quando piora e transforma o erro em regra que a próxima sessão lê."
+          "texto": "Muda uma coisa, mede, guarda o que ganhou, volta atrás quando piora e transforma o erro em regra que a próxima sessêo lê."
         }
       ]
     },
@@ -379,7 +379,7 @@
       "titulo": "Continue por aqui",
       "links": [
         {
-          "t": "Área LOOP-R Engenharia (todos os cursos da formação)",
+          "t": "Área LOOP-R Engenharia (todos os cursos da formaçêo)",
           "href": "https://eventos.inema.pro/loop-r-engenharia/",
           "icone": "camadas"
         },
@@ -389,17 +389,17 @@
           "icone": "seta"
         },
         {
-          "t": "Curso 1: Verificação e evals",
+          "t": "Curso 1: Verificaçêo e evals",
           "href": "https://inematds.github.io/loop-r-eng-verificacao-v72/",
           "icone": "check"
         },
         {
-          "t": "Curso 2: Execução longa",
+          "t": "Curso 2: Execuçêo longa",
           "href": "https://inematds.github.io/loop-r-eng-execucao-longa-v72/",
           "icone": "relogio"
         },
         {
-          "t": "Curso 3: Multiagente e orquestração",
+          "t": "Curso 3: Multiagente e orquestraçêo",
           "href": "https://inematds.github.io/loop-r-eng-multiagente-v72/",
           "icone": "robo"
         },

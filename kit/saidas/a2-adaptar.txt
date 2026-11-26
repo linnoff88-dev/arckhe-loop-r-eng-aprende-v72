@@ -1,5 +1,5 @@
 medidor congelado em /tmp/ensaio-aprende/a2-adaptar/medidor.sha256
-ciclo 1 · discard · 0.250 → 0.250 · não melhorou
+ciclo 1 · discard · 0.250 → 0.250 · nêo melhorou
 saída: 1
 ciclo 2 · keep · 0.250 → 1.000 · melhorou
 saída: 0

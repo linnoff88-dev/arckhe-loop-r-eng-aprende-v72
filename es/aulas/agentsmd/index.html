@@ -22,13 +22,13 @@ E=${TMPDIR:-/tmp}/ensaio-aprende/a4; cd $E/p   # continúa el ensayo de la clase
 s() { python3 $SIL --project $E/p &quot;$@&quot;; }
 j() { python3 -c &#x27;import json,sys; d=json.load(sys.stdin); print(*[k+&quot;=&quot;+json.dumps(d.get(k),ensure_ascii=False) for k in sys.argv[1:]])&#x27; &quot;$@&quot;; }
 echo &quot;# Instruções do projeto&quot; &gt; AGENTS.md
-s enforce R0001 --binding yes --rung prose --leak &quot;sessão que não lê o AGENTS.md&quot; \
-  --approved-by &quot;Seu Nome&quot; --reason &quot;porta ocupada derruba o servidor de outra sessão&quot; | j binding rung
+s enforce R0001 --binding yes --rung prose --leak &quot;sessêo que nêo lê o AGENTS.md&quot; \
+  --approved-by &quot;Seu Nome&quot; --reason &quot;porta ocupada derruba o servidor de outra sessêo&quot; | j binding rung
 s status | j promotion prose_binding; s check &gt; /dev/null; echo &quot;check: $?&quot;
 s promote | j written changed
 s promote --write | j written; cat AGENTS.md
 s check &gt; /dev/null; echo &quot;check: $?&quot;
-echo &quot;## alguém editou o bloco à mão&quot;; sed -i.bak &#x27;s/checar a porta/CHECAR A PORTA/&#x27; AGENTS.md
+echo &quot;## alguém editou o bloco à mêo&quot;; sed -i.bak &#x27;s/checar a porta/CHECAR A PORTA/&#x27; AGENTS.md
 s check | j promotion; s check &gt; /dev/null; echo &quot;check: $?&quot;
 s promote --write | j written; s check &gt; /dev/null; echo &quot;check: $?&quot;
 echo &quot;## o que um hook SessionStart injetaria&quot;; s context --brief</pre></div></div><div class="saida"><div class="saida-tabs" role="tablist"><button type="button" data-alvo="s0" aria-selected="true">Salida capturada (19/10/2026)</button></div><div class="saida-corpo" data-painel="s0"><span class="selo real">Ejemplo del repositorio</span><pre>binding=true rung="prose"
@@ -38,14 +38,14 @@ written=false changed=true
 written=true
 # Instruções do projeto
 
-&lt;!-- sil-loop-r:begin — gerado por sil.py promote; não editar à mão --&gt;
+&lt;!-- sil-loop-r:begin — gerado por sil.py promote; nêo editar à mêo --&gt;
 ## Regras vinculantes (SIL Loop R)
 
-- checar a porta antes de subir servidor (R0001; escopo: testes HTTP; proteção: prose; vazamento: sessão que não lê o AGENTS.md)
+- checar a porta antes de subir servidor (R0001; escopo: testes HTTP; proteçêo: prose; vazamento: sessêo que nêo lê o AGENTS.md)
 
 &lt;!-- sil-loop-r:end --&gt;
 check: 0
-## alguém editou o bloco à mão
+## alguém editou o bloco à mêo
 promotion={"file": "AGENTS.md", "in_sync": false, "problem": "bloco desatualizado; execute promote --write"}
 check: 1
 written=true
@@ -53,7 +53,7 @@ check: 0
 ## o que um hook SessionStart injetaria
 SIL Loop R — regras deste projeto (dados revisáveis; instruções do usuário prevalecem):
 - R0001 [ativa] checar a porta antes de subir servidor (escopo: testes HTTP)
-- R0002 [experimental] conferir git remote -v antes do push (escopo: publicação)</pre><p>Antes del <code>--write</code>, el check ya avisa: regla vinculante sin bloque. Después de la edición a mano, avisa de nuevo, hasta que el promote lo regraba. El bloque sale en portugués porque sil.py imprime en portugués.</p></div></div></div></section><section class="secao" id="s4"><div class="sec-cab"><div><h2><span class="sn">04</span><span class="sp" aria-hidden="true"> · </span>Opcional: la regla en cada sesión de Claude Code</h2><p>Para quien no usa AGENTS.md, o quiere también las reglas experimentales: un hook SessionStart que imprime context --brief (la SIL 1.1.0 creó el --brief para esto). Une el bloque hooks al .claude/settings.json del proyecto, sin reemplazar el archivo entero; la última parte del ensayo de arriba muestra el texto que entraría. Los hooks de guarda, con bloqueo, son el curso 4.</p></div></div><div class="cods um"><div><div class="cod"><div class="cod-cab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg><b>Archivo · kit/hooks/settings-sessionstart.json</b><button type="button" class="copiar" data-rot="Copiar" data-ok="Copiado"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copiar</span></button></div><pre>{
+- R0002 [experimental] conferir git remote -v antes do push (escopo: publicaçêo)</pre><p>Antes del <code>--write</code>, el check ya avisa: regla vinculante sin bloque. Después de la edición a mano, avisa de nuevo, hasta que el promote lo regraba. El bloque sale en portugués porque sil.py imprime en portugués.</p></div></div></div></section><section class="secao" id="s4"><div class="sec-cab"><div><h2><span class="sn">04</span><span class="sp" aria-hidden="true"> · </span>Opcional: la regla en cada sesión de Claude Code</h2><p>Para quien no usa AGENTS.md, o quiere también las reglas experimentales: un hook SessionStart que imprime context --brief (la SIL 1.1.0 creó el --brief para esto). Une el bloque hooks al .claude/settings.json del proyecto, sin reemplazar el archivo entero; la última parte del ensayo de arriba muestra el texto que entraría. Los hooks de guarda, con bloqueo, son el curso 4.</p></div></div><div class="cods um"><div><div class="cod"><div class="cod-cab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg><b>Archivo · kit/hooks/settings-sessionstart.json</b><button type="button" class="copiar" data-rot="Copiar" data-ok="Copiado"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copiar</span></button></div><pre>{
   &quot;hooks&quot;: {
     &quot;SessionStart&quot;: [
       {

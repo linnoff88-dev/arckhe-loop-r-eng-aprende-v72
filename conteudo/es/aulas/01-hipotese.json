@@ -115,12 +115,12 @@
         {
           "rot": "Archivo · kit/hipoteses/triagem.md",
           "icone": "arquivo",
-          "conteudo": "hipótese: incluir sinônimos de reembolso (estorno, devolução) nas regras leva o acerto de 0.70 a 0.80\nmétrica: acerto da triagem nos 40 casos de casos.jsonl\natual: 0.70\nalvo: 0.80\ndireção: maximizar\nmedida por: python3 kit/medir.py <repo>\nsem piorar: acerto nos casos escondidos (fora do repo)"
+          "conteudo": "hipótese: incluir sinônimos de reembolso (estorno, devoluçêo) nas regras leva o acerto de 0.70 a 0.80\nmétrica: acerto da triagem nos 40 casos de casos.jsonl\natual: 0.70\nalvo: 0.80\ndireçêo: maximizar\nmedida por: python3 kit/medir.py <repo>\nsem piorar: acerto nos casos escondidos (fora do repo)"
         },
         {
           "rot": "Terminal · ensayo sin costo",
           "icone": "terminal",
-          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit   # git clone https://github.com/inematds/loop-r-eng-aprende-v72 ~/projetos/loop-r-eng-aprende-v72\nfor h in vaga triagem; do\n  echo \"## $h\"; python3 $K/hipotese.py $K/hipoteses/$h.md; echo \"saída: $?\"\ndone\necho \"## vendas: conversão 3% → 5%, 50 propostas por semana\"\npython3 $K/hipotese.py $K/hipoteses/vendas-conversao.md --por-semana 50; echo \"saída: $?\"\necho \"## vendas: resposta em 48h 20% → 30% (métrica de sinal)\"\npython3 $K/hipotese.py $K/hipoteses/vendas-resposta.md --por-semana 50 | tail -2"
+          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit   # git clone https://github.com/inematds/loop-r-eng-aprende-v72 ~/projetos/loop-r-eng-aprende-v72\nfor h in vaga triagem; do\n  echo \"## $h\"; python3 $K/hipotese.py $K/hipoteses/$h.md; echo \"saída: $?\"\ndone\necho \"## vendas: conversêo 3% → 5%, 50 propostas por semana\"\npython3 $K/hipotese.py $K/hipoteses/vendas-conversao.md --por-semana 50; echo \"saída: $?\"\necho \"## vendas: resposta em 48h 20% → 30% (métrica de sinal)\"\npython3 $K/hipotese.py $K/hipoteses/vendas-resposta.md --por-semana 50 | tail -2"
         }
       ],
       "saida": {
@@ -128,7 +128,7 @@
         "abas": [
           {
             "rot": "Salida capturada (19/10/2026)",
-            "html": "<pre>## vaga\nHIPÓTESE: REPROVADA\n  falta: atual, alvo, medida por, sem piorar\n  hipótese vaga sem número\nsaída: 1\n## triagem\nHIPÓTESE: OK — acerto da triagem nos 40 casos de casos.jsonl: 0.7 → 0.8 (maximizar)\n  medida por: python3 kit/medir.py &lt;repo&gt;\n  sem piorar: acerto nos casos escondidos (fora do repo)\nsaída: 0\n## vendas: conversão 3% → 5%, 50 propostas por semana\nHIPÓTESE: OK — conversão (proposta que virou pacote pago em até 15 dias): 0.03 → 0.05 (maximizar)\n  medida por: coluna resultado de dados/execucoes.csv, A contra B\n  sem piorar: margem média, reclamações, opt-out\n  amostra mínima: 1506 por variante (95%, poder 80%) — 3012 no total\n  com 50 por semana: 61 semanas\n  AVISO: mais de 12 semanas — teste uma métrica de sinal mais rápida e vigie esta\nsaída: 0\n## vendas: resposta em 48h 20% → 30% (métrica de sinal)\n  amostra mínima: 294 por variante (95%, poder 80%) — 588 no total\n  com 50 por semana: 12 semanas</pre><p>El <code>loop-r/docs/05</code> redondea el mismo cálculo a \"~1.500 por variante, 60 semanas\" (3% → 5%) y \"~300, 12 semanas\" (20% → 30%). Con 50 propuestas por semana, la conversión lleva más de un año; la respuesta, tres meses.</p>"
+            "html": "<pre>## vaga\nHIPÓTESE: REPROVADA\n  falta: atual, alvo, medida por, sem piorar\n  hipótese vaga sem número\nsaída: 1\n## triagem\nHIPÓTESE: OK — acerto da triagem nos 40 casos de casos.jsonl: 0.7 → 0.8 (maximizar)\n  medida por: python3 kit/medir.py &lt;repo&gt;\n  sem piorar: acerto nos casos escondidos (fora do repo)\nsaída: 0\n## vendas: conversêo 3% → 5%, 50 propostas por semana\nHIPÓTESE: OK — conversêo (proposta que virou pacote pago em até 15 dias): 0.03 → 0.05 (maximizar)\n  medida por: coluna resultado de dados/execucoes.csv, A contra B\n  sem piorar: margem média, reclamações, opt-out\n  amostra mínima: 1506 por variante (95%, poder 80%) — 3012 no total\n  com 50 por semana: 61 semanas\n  AVISO: mais de 12 semanas — teste uma métrica de sinal mais rápida e vigie esta\nsaída: 0\n## vendas: resposta em 48h 20% → 30% (métrica de sinal)\n  amostra mínima: 294 por variante (95%, poder 80%) — 588 no total\n  com 50 por semana: 12 semanas</pre><p>El <code>loop-r/docs/05</code> redondea el mismo cálculo a \"~1.500 por variante, 60 semanas\" (3% → 5%) y \"~300, 12 semanas\" (20% → 30%). Con 50 propuestas por semana, la conversión lleva más de un año; la respuesta, tres meses.</p>"
           },
           {
             "rot": "El error común",

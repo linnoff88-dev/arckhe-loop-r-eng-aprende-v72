@@ -25,7 +25,7 @@ python3 $K/loopr.py iniciar $L --v1 $X/versoes/v1/executor.prompt.md --candidata
 echo &quot;## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações&quot;
 python3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-02-02 --ate 2026-04-26 \
   --metrica resposta --minimo 166 --vigiar reclamou:0 --vigiar optout:0.005; echo &quot;saída: $?&quot;
-echo &quot;## E0002 · H3 (abrir citando um ponto da avaliação)&quot;
+echo &quot;## E0002 · H3 (abrir citando um ponto da avaliaçêo)&quot;
 python3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-05-04 --ate 2026-07-26 \
   --metrica resposta --minimo 212 --vigiar reclamou:0.01 --vigiar optout:0.005; echo &quot;saída: $?&quot;</pre></div></div><div class="saida"><div class="saida-tabs" role="tablist"><button type="button" data-alvo="s0" aria-selected="true">Salida capturada (19/10/2026)</button><button type="button" data-alvo="s1" aria-selected="false">El error común</button></div><div class="saida-corpo" data-painel="s0"><span class="selo real">Ejemplo del repositorio</span><pre>loop iniciado: versoes/atual → v1
 ## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações
@@ -34,7 +34,7 @@ Métrica do teste: resposta  A=0.1933 (58/300)  B=0.2967 (89/300)  z=2.9426 p=0.
 Vigiada reclamou: A 1/300 vs B 6/300, Δ=+0.0167 tol 0 → FALHA
 Vigiada optout: A 0/300 vs B 1/300, Δ=+0.0033 tol 0.005 → DENTRO
 saída: 1
-## E0002 · H3 (abrir citando um ponto da avaliação)
+## E0002 · H3 (abrir citando um ponto da avaliaçêo)
 VEREDITO: B_GANHOU
 Métrica do teste: resposta  A=0.1933 (58/300)  B=0.2933 (88/300)  z=2.8543 p=0.0043
 Vigiada reclamou: A 2/300 vs B 4/300, Δ=+0.0067 tol 0.01 → DENTRO
@@ -42,19 +42,19 @@ Vigiada optout: A 3/300 vs B 1/300, Δ=-0.0067 tol 0.005 → DENTRO
 saída: 0</pre><p>Los mismos números del ledger publicado: E0001 con 58/300 contra 89/300 (z=2,94) fue descartado por reclamos (6 contra 1, tolerancia 0); E0002 con 58/300 contra 88/300 (z=2,85, p=0,004) ganó. Incluso con la tolerancia de 0,01 que el ejemplo adoptó después, E0001 todavía caería (Δ=0,0167).</p></div><div class="saida-corpo" data-painel="s1" hidden><p>Lee solo la métrica de la prueba. E0001 tenía una ganancia mayor que E0002 y aun así no podía subir: una barandilla (guardrail) pasó de la tolerancia. Y la tolerancia se acuerda <b>antes</b>; cambiarla después de ver el número es reescribir la hipótesis.</p></div></div></div></section><section class="secao" id="s3"><div class="sec-cab"><div><h2><span class="sn">03</span><span class="sp" aria-hidden="true"> · </span>Tarjeta, promoción y rollback</h2><p>Continúa el bloque anterior. El costo de la tarjeta es la suma del custo.md del ciclo 0004 del ejemplo (5 agentes, ~392 mil tokens); el ejemplo también lo registra en reales, el curso cuenta en tokens.</p></div></div><div class="cods"><div><div class="cod"><div class="cod-cab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg><b>Terminal · ensayo sin costo</b><button type="button" class="copiar" data-rot="Copiar" data-ok="Copiado"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copiar</span></button></div><pre>K=~/projetos/loop-r-eng-aprende-v72/kit
 E=${TMPDIR:-/tmp}/ensaio-aprende/a3; L=$E/loop   # continua o bloco anterior (veredito B_GANHOU gravado)
 python3 $K/loopr.py promover $L; echo &quot;saída: $?&quot;
-python3 $K/loopr.py cartao $L --hipotese &quot;H3 — abrir citando a avaliação&quot; --tokens 392000
+python3 $K/loopr.py cartao $L --hipotese &quot;H3 — abrir citando a avaliaçêo&quot; --tokens 392000
 python3 $K/loopr.py decidir $L aprovado --por &quot;Seu Nome&quot;
 python3 $K/loopr.py promover $L; echo &quot;atual → $(readlink $L/versoes/atual)&quot;
-python3 $K/loopr.py reverter $L --motivo &quot;resposta caiu no 1º ciclo após a promoção&quot;
+python3 $K/loopr.py reverter $L --motivo &quot;resposta caiu no 1º ciclo após a promoçêo&quot;
 echo &quot;atual → $(readlink $L/versoes/atual) · pastas: $(ls $L/versoes | tr &#x27;\n&#x27; &#x27; &#x27;)&quot;
-git -C $L log --format=%s</pre></div></div><div class="saida"><div class="saida-tabs" role="tablist"><button type="button" data-alvo="s0" aria-selected="true">Salida capturada (19/10/2026)</button></div><div class="saida-corpo" data-painel="s0"><span class="selo real">Ejemplo del repositorio</span><pre>RECUSADO: promover exige veredito B_GANHOU e decisão aprovado (veredito: B_GANHOU; decisão: nenhuma)
+git -C $L log --format=%s</pre></div></div><div class="saida"><div class="saida-tabs" role="tablist"><button type="button" data-alvo="s0" aria-selected="true">Salida capturada (19/10/2026)</button></div><div class="saida-corpo" data-painel="s0"><span class="selo real">Ejemplo del repositorio</span><pre>RECUSADO: promover exige veredito B_GANHOU e decisêo aprovado (veredito: B_GANHOU; decisêo: nenhuma)
 saída: 1
-CICLO — hipótese: "H3 — abrir citando a avaliação"
+CICLO — hipótese: "H3 — abrir citando a avaliaçêo"
 Resultado:   resposta 0.1933 → 0.2933  ((58/300) vs (88/300), z=2.8543, p=0.0043)  [VEREDITO: B_GANHOU]
 Vigiado:     reclamou ok · optout ok
 Custo:       392.000 tokens neste ciclo (sai da cota)
-Decisão:     aprovar / rejeitar / esperar mais dados
-decisão gravada: aprovado
+Decisêo:     aprovar / rejeitar / esperar mais dados
+decisêo gravada: aprovado
 PROMOVIDA: versoes/atual → v2
 atual → v2
 ROLLBACK: versoes/atual → v1 (a pasta v2 continua lá)

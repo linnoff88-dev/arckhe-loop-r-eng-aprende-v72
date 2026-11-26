@@ -27,9 +27,9 @@ echo &quot;## results.tsv&quot;; cut -f1,3- $E/sis/results.tsv
 echo &quot;## git log&quot;; git -C $E/sis log --format=%s</pre></div></div><div class="saida"><div class="saida-tabs" role="tablist"><button type="button" data-alvo="s0" aria-selected="true">Captured output (10/19/2026)</button><button type="button" data-alvo="s1" aria-selected="false">The common mistake</button></div><div class="saida-corpo" data-painel="s0"><span class="selo real">Example from the repository</span><pre>sistema criado em /tmp/ensaio-aprende/a2/sis (acerto: 0.700 (28/40))
 ciclo 1 · keep · 0.700 → 0.800 · melhorou
 saída: 0
-ciclo 2 · discard · 0.800 → 0.700 · não melhorou
+ciclo 2 · discard · 0.800 → 0.700 · nêo melhorou
 saída: 1
-ciclo 3 · discard · 0.800 → 0.800 · não melhorou
+ciclo 3 · discard · 0.800 → 0.800 · nêo melhorou
 saída: 1
 ## results.tsv
 ciclo	base	novo	status	descricao
@@ -55,7 +55,7 @@ Casos que o classificador errou:
 $(python3 &quot;$K/medir.py&quot; . --erros | tail -n +2)
 
 Proponha UMA mudança que generalize (palavras que pessoas reais usariam), sem copiar frases inteiras dos casos.
-Responda SÓ com o conteúdo completo do novo regras.txt, sem explicação e sem cercas de código.&quot;
+Responda SÓ com o conteúdo completo do novo regras.txt, sem explicaçêo e sem cercas de código.&quot;
 J=$(mktemp)
 echo &quot;$PEDIDO&quot; | claude -p --tools &quot;&quot; --output-format json &gt; &quot;$J&quot; 2&gt;/dev/null
 python3 - &quot;$J&quot; &lt;&lt;&#x27;PY&#x27;
@@ -63,7 +63,7 @@ import json, os, sys
 try:
     d = json.load(open(sys.argv[1], encoding=&quot;utf-8&quot;))
 except Exception:
-    print(&quot;ERRO: resposta do claude não é JSON&quot;); sys.exit(1)
+    print(&quot;ERRO: resposta do claude nêo é JSON&quot;); sys.exit(1)
 r = (d.get(&quot;result&quot;) or &quot;&quot;).strip()
 linhas = [l for l in r.splitlines() if not l.startswith(&quot;```&quot;)]
 if d.get(&quot;is_error&quot;) or not any(&quot;:&quot; in l for l in linhas):
@@ -91,14 +91,14 @@ ok = sum(calc.dobro(int(a)) == int(b) for a, b in c)
 print(f&#x27;{ok / len(c):.3f} {ok} {len(c)}&#x27;)&quot;
 FIM
 git init -q -b main; git add -A; git -c user.name=treino -c user.email=treino@exemplo.invalid commit -qm &quot;v1&quot;
-export MEDIR=&quot;bash medir.sh&quot; MEDIDOR=&quot;casos.txt medir.sh&quot;      # as duas variáveis da adaptação
+export MEDIR=&quot;bash medir.sh&quot; MEDIDOR=&quot;casos.txt medir.sh&quot;      # as duas variáveis da adaptaçêo
 bash $K/experimento.sh --congelar . $E/medidor.sha256; export GUARDA=$E/medidor.sha256
 AGENTE=&quot;echo &#x27;# revisado&#x27; &gt;&gt; calc.py&quot; bash $K/experimento.sh . &quot;comenta&quot;; echo &quot;saída: $?&quot;
 AGENTE=&quot;printf &#x27;def dobro(x):\n    return x * 2\n&#x27; &gt; calc.py&quot; bash $K/experimento.sh . &quot;corrige&quot;; echo &quot;saída: $?&quot;
 AGENTE=&quot;echo &#x27;3 7&#x27; &gt;&gt; casos.txt&quot; bash $K/experimento.sh . &quot;mexe nos casos&quot;; echo &quot;saída: $?&quot;
 echo &quot;## results.tsv (criado pelo experimento.sh)&quot;; cut -f1,3- results.tsv
 echo &quot;## git status (vazio = limpo)&quot;; git status --short</pre></div></div><div class="saida"><div class="saida-tabs" role="tablist"><button type="button" data-alvo="s0" aria-selected="true">Captured output (10/19/2026)</button><button type="button" data-alvo="s1" aria-selected="false">The three requirements</button></div><div class="saida-corpo" data-painel="s0"><span class="selo real">Example from the repository</span><pre>medidor congelado em /tmp/ensaio-aprende/a2-adaptar/medidor.sha256
-ciclo 1 · discard · 0.250 → 0.250 · não melhorou
+ciclo 1 · discard · 0.250 → 0.250 · nêo melhorou
 saída: 1
 ciclo 2 · keep · 0.250 → 1.000 · melhorou
 saída: 0
