@@ -86,7 +86,7 @@
         {
           "rot": "Terminal · ensayo sin costo",
           "icone": "terminal",
-          "conteudo": "SIL=~/projetos/sil-loop-r/sil.py   # git clone https://github.com/inematds/sil-loop-r ~/projetos/sil-loop-r\nE=${TMPDIR:-/tmp}/ensaio-aprende/a4; rm -rf $E; mkdir -p $E/p; cd $E/p && git init -q\necho 'python3 -m http.server 8000' > serve.sh\ns() { python3 $SIL --project $E/p \"$@\"; }\nj() { python3 -c 'import json,sys; d=json.load(sys.stdin); print(*[k+\"=\"+json.dumps(d.get(k),ensure_ascii=False) for k in sys.argv[1:]])' \"$@\"; }\ns init | j version; s config --approval-batch 2 | j approval_batch\ns occurrence --title \"porta ocupada\" --evidence \"teste HTTP falhou: address already in use\" \\\n  --cause \"servidor de outra sessêo na mesma porta\" --correction \"checar a porta antes\" | j id\ns lesson --occurrence O0001 --proposal \"checar a porta antes de subir servidor\" --scope \"testes HTTP\" --watch serve.sh | j id status\ns occurrence --title \"push no remoto errado\" --evidence \"git push foi para origin, nêo para o remoto da conta\" | j id\ns lesson --occurrence O0002 --proposal \"conferir git remote -v antes do push\" --scope \"publicaçêo\" | j id status\necho \"## fim da tarefa: chegou a hora do lote?\"; s status | j approval_due approval_reasons\ns request | j requested"
+          "conteudo": "SIL=~/projetos/sil-loop-r/sil.py   # git clone https://github.com/linnoff88-dev/sil-loop-r ~/projetos/sil-loop-r\nE=${TMPDIR:-/tmp}/ensaio-aprende/a4; rm -rf $E; mkdir -p $E/p; cd $E/p && git init -q\necho 'python3 -m http.server 8000' > serve.sh\ns() { python3 $SIL --project $E/p \"$@\"; }\nj() { python3 -c 'import json,sys; d=json.load(sys.stdin); print(*[k+\"=\"+json.dumps(d.get(k),ensure_ascii=False) for k in sys.argv[1:]])' \"$@\"; }\ns init | j version; s config --approval-batch 2 | j approval_batch\ns occurrence --title \"porta ocupada\" --evidence \"teste HTTP falhou: address already in use\" \\\n  --cause \"servidor de outra sessêo na mesma porta\" --correction \"checar a porta antes\" | j id\ns lesson --occurrence O0001 --proposal \"checar a porta antes de subir servidor\" --scope \"testes HTTP\" --watch serve.sh | j id status\ns occurrence --title \"push no remoto errado\" --evidence \"git push foi para origin, nêo para o remoto da conta\" | j id\ns lesson --occurrence O0002 --proposal \"conferir git remote -v antes do push\" --scope \"publicaçêo\" | j id status\necho \"## fim da tarefa: chegou a hora do lote?\"; s status | j approval_due approval_reasons\ns request | j requested"
         }
       ],
       "saida": {
@@ -127,7 +127,7 @@
     {
       "tipo": "passos",
       "titulo": "Caso real: el loop de lecciones de esta máquina",
-      "sub": "INEMA usa LESSONS.md, FALHAS.md y LIMITES.md en el proyecto wifi (el hub de monitoreo). Solo conteos; ninguna línea de los archivos aparece aquí.",
+      "sub": "ARCKHÉ usa LESSONS.md, FALHAS.md y LIMITES.md en el proyecto wifi (el hub de monitoreo). Solo conteos; ninguna línea de los archivos aparece aquí.",
       "passos": [
         {
           "titulo": "05/10/2026",
@@ -296,17 +296,17 @@
       "links": [
         {
           "t": "SIL Loop R: repositorio y guía",
-          "href": "https://github.com/inematds/sil-loop-r",
+          "href": "https://github.com/linnoff88-dev/sil-loop-r",
           "icone": "git"
         },
         {
           "t": "Skill del SIL Loop R",
-          "href": "https://github.com/inematds/sil-loop-r/blob/main/skills/sil-loop-r/SKILL.md",
+          "href": "https://github.com/linnoff88-dev/sil-loop-r/blob/main/skills/sil-loop-r/SKILL.md",
           "icone": "arquivo"
         },
         {
           "t": "kit/contar-licoes.py",
-          "href": "https://github.com/inematds/loop-r-eng-aprende-v72/blob/main/kit/contar-licoes.py",
+          "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/blob/main/kit/contar-licoes.py",
           "icone": "terminal"
         }
       ]

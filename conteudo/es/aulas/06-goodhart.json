@@ -195,7 +195,7 @@
         {
           "p": "Sobre el atajo en el detector de alucinación de la Darwin Gödel Machine, el curso lo trata como:",
           "opcoes": [
-            "Un hecho medido por INEMA en el ensayo de esta clase",
+            "Un hecho medido por ARCKHÉ en el ensayo de esta clase",
             "Un rumor de foro, sin fuente que se pueda citar",
             "Una hipótesis del curso, aún no probada por nadie",
             "Un caso relatado en el propio artículo, en el Apéndice H"
@@ -247,17 +247,17 @@
         },
         {
           "t": "LOOP-R: crítica y viabilidad, Goodhart (docs/06)",
-          "href": "https://github.com/inematds/loop-r/blob/main/docs/06-critica-e-viabilidade.md",
+          "href": "https://github.com/linnoff88-dev/loop-r/blob/main/docs/06-critica-e-viabilidade.md",
           "icone": "arquivo"
         },
         {
           "t": "Curso 1: pruebas congeladas, atajos y juez calibrado",
-          "href": "https://inematds.github.io/loop-r-eng-verificacao-v72/es/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/es/",
           "icone": "check"
         },
         {
           "t": "kit/hashes.py",
-          "href": "https://github.com/inematds/loop-r-eng-aprende-v72/blob/main/kit/hashes.py",
+          "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/blob/main/kit/hashes.py",
           "icone": "terminal"
         }
       ]

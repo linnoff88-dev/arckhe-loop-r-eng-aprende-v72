@@ -252,7 +252,7 @@
         {
           "p": "Sobre los números de autoresearch (experimentos por hora, ganancia en el entrenamiento), ¿qué dice este curso?",
           "opcoes": [
-            "Los mide INEMA",
+            "Los mide ARCKHÉ",
             "Son del artículo oficial revisado por pares, con código y datos publicados",
             "Valen para cualquier sistema",
             "Los reportan fuentes secundarias, sin confirmación"
@@ -287,7 +287,7 @@
       "links": [
         {
           "t": "kit/experimento.sh",
-          "href": "https://github.com/inematds/loop-r-eng-aprende-v72/blob/main/kit/experimento.sh",
+          "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/blob/main/kit/experimento.sh",
           "icone": "terminal"
         },
         {
@@ -302,7 +302,7 @@
         },
         {
           "t": "Curso 2: loop headless con tope, flock y systemd",
-          "href": "https://inematds.github.io/loop-r-eng-execucao-longa-v72/es/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/es/",
           "icone": "relogio"
         }
       ]

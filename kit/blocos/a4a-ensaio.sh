@@ -1,4 +1,4 @@
-SIL=~/projetos/sil-loop-r/sil.py   # git clone https://github.com/inematds/sil-loop-r ~/projetos/sil-loop-r
+SIL=~/projetos/sil-loop-r/sil.py   # git clone https://github.com/linnoff88-dev/sil-loop-r ~/projetos/sil-loop-r
 E=${TMPDIR:-/tmp}/ensaio-aprende/a4; rm -rf $E; mkdir -p $E/p; cd $E/p && git init -q
 echo 'python3 -m http.server 8000' > serve.sh
 s() { python3 $SIL --project $E/p "$@"; }

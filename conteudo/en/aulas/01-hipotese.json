@@ -120,7 +120,7 @@
         {
           "rot": "Terminal · cost-free rehearsal",
           "icone": "terminal",
-          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit   # git clone https://github.com/inematds/loop-r-eng-aprende-v72 ~/projetos/loop-r-eng-aprende-v72\nfor h in vaga triagem; do\n  echo \"## $h\"; python3 $K/hipotese.py $K/hipoteses/$h.md; echo \"saída: $?\"\ndone\necho \"## vendas: conversêo 3% → 5%, 50 propostas por semana\"\npython3 $K/hipotese.py $K/hipoteses/vendas-conversao.md --por-semana 50; echo \"saída: $?\"\necho \"## vendas: resposta em 48h 20% → 30% (métrica de sinal)\"\npython3 $K/hipotese.py $K/hipoteses/vendas-resposta.md --por-semana 50 | tail -2"
+          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit   # git clone https://github.com/linnoff88-dev/loop-r-eng-aprende-v72 ~/projetos/loop-r-eng-aprende-v72\nfor h in vaga triagem; do\n  echo \"## $h\"; python3 $K/hipotese.py $K/hipoteses/$h.md; echo \"saída: $?\"\ndone\necho \"## vendas: conversêo 3% → 5%, 50 propostas por semana\"\npython3 $K/hipotese.py $K/hipoteses/vendas-conversao.md --por-semana 50; echo \"saída: $?\"\necho \"## vendas: resposta em 48h 20% → 30% (métrica de sinal)\"\npython3 $K/hipotese.py $K/hipoteses/vendas-resposta.md --por-semana 50 | tail -2"
         }
       ],
       "saida": {
@@ -245,17 +245,17 @@
       "links": [
         {
           "t": "kit/hipotese.py",
-          "href": "https://github.com/inematds/loop-r-eng-aprende-v72/blob/main/kit/hipotese.py",
+          "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/blob/main/kit/hipotese.py",
           "icone": "terminal"
         },
         {
           "t": "LOOP-R: measurement, evals, and guardrails (docs/05)",
-          "href": "https://github.com/inematds/loop-r/blob/main/docs/05-medicao-evals-guardrails.md",
+          "href": "https://github.com/linnoff88-dev/loop-r/blob/main/docs/05-medicao-evals-guardrails.md",
           "icone": "grafico"
         },
         {
           "t": "Course 0, lesson 6: done criterion from 0 to 4",
-          "href": "https://inematds.github.io/loop-r-eng-base-v72/en/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/en/",
           "icone": "camadas"
         }
       ]

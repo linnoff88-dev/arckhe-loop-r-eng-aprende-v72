@@ -1,41 +1,41 @@
 {
   "id": "loop-r-eng-aprende-v72",
   "lang": "es",
-  "url": "https://inematds.github.io/loop-r-eng-aprende-v72/es/",
+  "url": "https://linnoff88-dev.github.io/arckhe-/es/",
   "nome": "El loop que aprende",
   "sub": "Formación LOOP-R Ingeniería · curso 5",
   "volta": {
     "t": "Área LOOP-R Ingeniería",
-    "href": "https://eventos.inema.pro/loop-r-engenharia/"
+    "href": "https://eventos.ARCKHÉ.pro/loop-r-engenharia/"
   },
   "lado_card": {
     "rot": "El kit de este curso",
     "t": "kit/ en el repositorio del curso",
     "texto": "Hipótesis, experimento keep/discard, veredicto y rollback, guarda del medidor, traza y verificación del loop. Cada uno con ensayo sin costo, probado el 19/10/2026.",
     "link": "Abrir la carpeta kit/ en GitHub",
-    "href": "https://github.com/inematds/loop-r-eng-aprende-v72/tree/main/kit"
+    "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/tree/main/kit"
   },
-  "rodape": "INEMA.CLUB · contenido abierto y gratuito · formato INEMA Learning v7.2 · Formación LOOP-R Ingeniería, curso 5 de 6 · <a href=\"https://eventos.inema.pro/loop-r-engenharia/\">eventos.inema.pro/loop-r-engenharia</a> · <a href=\"https://github.com/inematds/loop-r-eng-aprende-v72/tree/main/kit\">kit del curso en GitHub</a> · <a href=\"https://inema.club/\">inema.club</a>",
+  "rodape": "ARCKHÉ AI · contenido abierto y gratuito · formato ARCKHÉ Learning v7.2 · Formación LOOP-R Ingeniería, curso 5 de 6 · <a href=\"https://eventos.ARCKHÉ.pro/loop-r-engenharia/\">eventos.ARCKHÉ.pro/loop-r-engenharia</a> · <a href=\"https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/tree/main/kit\">kit del curso en GitHub</a> · <a href=\"https://ARCKHÉ AI/\">ARCKHÉ AI</a>",
   "videos": {
     "loop-r-t4": {
       "titulo": "LOOP-R, ruta 4: medir de verdad",
       "duracao": "17 min",
-      "mp4": "https://github.com/inematds/loop-r/releases/download/video-v2.0.0/loop-r-t4-pt.mp4",
+      "mp4": "https://github.com/linnoff88-dev/loop-r/releases/download/video-v2.0.0/loop-r-t4-pt.mp4",
       "vtt": "assets/vtt/loop-r-t4.vtt",
       "poster": "assets/img/loop-r-t4.jpg",
-      "pagina": "https://inematds.github.io/loop-r/videos/",
+      "pagina": "https://linnoff88-dev.github.io/arckhe-/videos/",
       "idiomas": {
         "en": {
-          "mp4": "https://github.com/inematds/loop-r/releases/download/video-v2.0.0/loop-r-t4-en-en.mp4",
+          "mp4": "https://github.com/linnoff88-dev/loop-r/releases/download/video-v2.0.0/loop-r-t4-en-en.mp4",
           "vtt": "assets/vtt/loop-r-t4-en.vtt",
           "duracao": "17 min 44 s",
-          "pagina": "https://inematds.github.io/loop-r/videos/en.html"
+          "pagina": "https://linnoff88-dev.github.io/arckhe-/videos/en.html"
         },
         "es": {
-          "mp4": "https://github.com/inematds/loop-r/releases/download/video-v2.0.0/loop-r-t4-es-es.mp4",
+          "mp4": "https://github.com/linnoff88-dev/loop-r/releases/download/video-v2.0.0/loop-r-t4-es-es.mp4",
           "vtt": "assets/vtt/loop-r-t4-es.vtt",
           "duracao": "15 min 33 s",
-          "pagina": "https://inematds.github.io/loop-r/videos/es.html"
+          "pagina": "https://linnoff88-dev.github.io/arckhe-/videos/es.html"
         }
       }
     }
@@ -47,7 +47,7 @@
     "cta": "Empezar por la clase 1",
     "cta2": {
       "t": "Ver el área de la formación",
-      "href": "https://eventos.inema.pro/loop-r-engenharia/"
+      "href": "https://eventos.ARCKHÉ.pro/loop-r-engenharia/"
     },
     "capa_alt": "Laboratorio oscuro con dos módulos de circuito lado a lado conectados a un indicador analógico y un cable en lazo; título del curso a la izquierda.",
     "numeros": [
@@ -77,7 +77,7 @@
           "rot": "Curso 0",
           "t": "Base: anatomía del loop",
           "l": "Las cinco piezas, el harness, los motores de loop, el LOOP-R, criterio de terminado de 0 a 4 y topes.",
-          "href": "https://inematds.github.io/loop-r-eng-base-v72/es/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/es/",
           "href_idioma": true,
           "img": "assets/img/cursos/base.jpg"
         },
@@ -85,7 +85,7 @@
           "rot": "Curso 1",
           "t": "Verificación y evals",
           "l": "Evaluador separado y escéptico, pruebas congeladas, reward hacking, conjunto de oro y juez calibrado.",
-          "href": "https://inematds.github.io/loop-r-eng-verificacao-v72/es/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/es/",
           "href_idioma": true,
           "img": "assets/img/cursos/verificacao.jpg"
         },
@@ -93,7 +93,7 @@
           "rot": "Curso 2",
           "t": "Ejecución larga",
           "l": "El kit de siete archivos, goal.md nivel 3+, contexto en franjas, handoff, loop headless y medición.",
-          "href": "https://inematds.github.io/loop-r-eng-execucao-longa-v72/es/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/es/",
           "href_idioma": true,
           "img": "assets/img/cursos/execucao-longa.jpg"
         },
@@ -101,7 +101,7 @@
           "rot": "Curso 3",
           "t": "Multiagente y orquestación",
           "l": "Cuándo no usarlo, subagentes, generador × evaluador, worktrees, colas y el equipo Claude + Codex.",
-          "href": "https://inematds.github.io/loop-r-eng-multiagente-v72/es/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/es/",
           "href_idioma": true,
           "img": "assets/img/cursos/multiagente.jpg"
         },
@@ -109,7 +109,7 @@
           "rot": "Curso 4",
           "t": "Seguridad del loop autónomo",
           "l": "Tríada letal, Regla de Dos, inyección por el contenido leído, hooks de guarda y sandbox.",
-          "href": "https://inematds.github.io/loop-r-eng-seguranca-v72/es/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/es/",
           "href_idioma": true,
           "img": "assets/img/cursos/seguranca.jpg"
         },
@@ -117,7 +117,7 @@
           "rot": "Curso 5 · estás aquí",
           "t": "El loop que aprende",
           "l": "Hipótesis con número, experimento, promoción y rollback, lecciones que se vuelven regla y el riesgo de optimizar contra el medidor.",
-          "href": "https://inematds.github.io/loop-r-eng-aprende-v72/es/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/es/",
           "href_idioma": true,
           "img": "assets/img/cursos/aprende.jpg"
         }

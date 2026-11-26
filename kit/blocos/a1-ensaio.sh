@@ -1,4 +1,4 @@
-K=~/projetos/loop-r-eng-aprende-v72/kit   # git clone https://github.com/inematds/loop-r-eng-aprende-v72 ~/projetos/loop-r-eng-aprende-v72
+K=~/projetos/loop-r-eng-aprende-v72/kit   # git clone https://github.com/linnoff88-dev/loop-r-eng-aprende-v72 ~/projetos/loop-r-eng-aprende-v72
 for h in vaga triagem; do
   echo "## $h"; python3 $K/hipotese.py $K/hipoteses/$h.md; echo "saída: $?"
 done

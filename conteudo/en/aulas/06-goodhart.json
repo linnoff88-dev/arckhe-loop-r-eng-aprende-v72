@@ -195,7 +195,7 @@
         {
           "p": "About the shortcut in the Darwin Gödel Machine's hallucination detector, the course treats it as:",
           "opcoes": [
-            "A fact INEMA measured in this lesson's rehearsal",
+            "A fact ARCKHÉ measured in this lesson's rehearsal",
             "A forum rumor, with no source you can cite",
             "A hypothesis of the course, not yet tested by anyone",
             "A case reported in the paper itself, in Appendix H"
@@ -247,17 +247,17 @@
         },
         {
           "t": "LOOP-R: critique and feasibility, Goodhart (docs/06)",
-          "href": "https://github.com/inematds/loop-r/blob/main/docs/06-critica-e-viabilidade.md",
+          "href": "https://github.com/linnoff88-dev/loop-r/blob/main/docs/06-critica-e-viabilidade.md",
           "icone": "arquivo"
         },
         {
           "t": "Course 1: frozen tests, shortcuts, and a calibrated judge",
-          "href": "https://inematds.github.io/loop-r-eng-verificacao-v72/en/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/en/",
           "icone": "check"
         },
         {
           "t": "kit/hashes.py",
-          "href": "https://github.com/inematds/loop-r-eng-aprende-v72/blob/main/kit/hashes.py",
+          "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/blob/main/kit/hashes.py",
           "icone": "terminal"
         }
       ]

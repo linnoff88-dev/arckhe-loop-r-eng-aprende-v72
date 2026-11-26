@@ -114,7 +114,7 @@
     },
     {
       "tipo": "passos",
-      "titulo": "O que já se mede no INEMA",
+      "titulo": "O que já se mede no ARCKHÉ",
       "sub": "Dois casos locais, com a data de cada número.",
       "passos": [
         {
@@ -210,7 +210,7 @@
             "Só os keeps"
           ],
           "certa": 0,
-          "explica": "Números bastam para custo e alertas, e texto de prompt e resposta pode ter dado sensível. É a regra da telemetria local do INEMA.",
+          "explica": "Números bastam para custo e alertas, e texto de prompt e resposta pode ter dado sensível. É a regra da telemetria local do ARCKHÉ.",
           "ref": "passos"
         },
         {
@@ -251,17 +251,17 @@
       "links": [
         {
           "t": "kit/custo-ciclo.py",
-          "href": "https://github.com/inematds/loop-r-eng-aprende-v72/blob/main/kit/custo-ciclo.py",
+          "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/blob/main/kit/custo-ciclo.py",
           "icone": "terminal"
         },
         {
           "t": "Meta-agente do LOOP-R (contrato)",
-          "href": "https://github.com/inematds/loop-r/blob/main/.claude/agents/meta-agente.md",
+          "href": "https://github.com/linnoff88-dev/loop-r/blob/main/.claude/agents/meta-agente.md",
           "icone": "robo"
         },
         {
           "t": "Curso 2: medir a sessêo, cache e custo de retomada",
-          "href": "https://inematds.github.io/loop-r-eng-execucao-longa-v72/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/",
           "icone": "relogio"
         },
         {

@@ -380,37 +380,37 @@
       "links": [
         {
           "t": "Área LOOP-R Engenharia (todos os cursos da formaçêo)",
-          "href": "https://eventos.inema.pro/loop-r-engenharia/",
+          "href": "https://eventos.ARCKHÉ.pro/loop-r-engenharia/",
           "icone": "camadas"
         },
         {
           "t": "Curso 0: Base, anatomia do loop",
-          "href": "https://inematds.github.io/loop-r-eng-base-v72/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/",
           "icone": "seta"
         },
         {
           "t": "Curso 1: Verificaçêo e evals",
-          "href": "https://inematds.github.io/loop-r-eng-verificacao-v72/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/",
           "icone": "check"
         },
         {
           "t": "Curso 2: Execuçêo longa",
-          "href": "https://inematds.github.io/loop-r-eng-execucao-longa-v72/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/",
           "icone": "relogio"
         },
         {
           "t": "Curso 3: Multiagente e orquestraçêo",
-          "href": "https://inematds.github.io/loop-r-eng-multiagente-v72/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/",
           "icone": "robo"
         },
         {
           "t": "Curso 4: Segurança do loop autônomo",
-          "href": "https://inematds.github.io/loop-r-eng-seguranca-v72/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/",
           "icone": "escudo"
         },
         {
           "t": "kit/conferir-loop.py",
-          "href": "https://github.com/inematds/loop-r-eng-aprende-v72/blob/main/kit/conferir-loop.py",
+          "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/blob/main/kit/conferir-loop.py",
           "icone": "terminal"
         }
       ]

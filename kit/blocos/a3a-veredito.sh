@@ -1,5 +1,5 @@
 K=~/projetos/loop-r-eng-aprende-v72/kit
-X=~/projetos/loop-r/exemplos/vendas-whatsapp   # git clone https://github.com/inematds/loop-r ~/projetos/loop-r (dados SINTÉTICOS)
+X=~/projetos/loop-r/exemplos/vendas-whatsapp   # git clone https://github.com/linnoff88-dev/loop-r ~/projetos/loop-r (dados SINTÉTICOS)
 E=${TMPDIR:-/tmp}/ensaio-aprende/a3; rm -rf $E; L=$E/loop   # uma CÓPIA: nada é gravado no repo loop-r
 python3 $K/loopr.py iniciar $L --v1 $X/versoes/v1/executor.prompt.md --candidata $X/versoes/v2/executor.prompt.md
 echo "## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações"

@@ -6,14 +6,14 @@
 </div>
 
 
-Curso aberto e gratuito do INEMA.CLUB no formato INEMA Learning v7.2, em portuguêÂªs, inglêÂªs e espanhol:
-**https://inematds.github.io/loop-r-eng-aprende-v72/** êÂ· [EN](https://inematds.github.io/loop-r-eng-aprende-v72/en/) êÂ· [ES](https://inematds.github.io/loop-r-eng-aprende-v72/es/)
+Curso aberto e gratuito do ARCKHÉ AI no formato ARCKHÉ Learning v7.2, em portuguêÂªs, inglêÂªs e espanhol:
+**https://linnoff88-dev.github.io/arckhe-/** êÂ· [EN](https://linnoff88-dev.github.io/arckhe-/en/) êÂ· [ES](https://linnoff88-dev.github.io/arckhe-/es/)
 
 Oito aulas para quem jêÂ¡ usa Claude Code ou Codex no terminal: hipêÂ³tese com nêÂºmero, experimento keep/discard com git (desenho do autoresearch), veredito A/B com guarda-corpos, cartêÂ£o de decisêÂ£o, promoêÂ§êÂ£o e rollback (LOOP-R), liêÂ§êÂµes com aprovaêÂ§êÂ£o em lote e revisêÂ£o (SIL Loop R), regra vinculante no AGENTS.md, o risco de otimizar contra o prêÂ³prio medidor, rastro e custo por ciclo, e a montagem das oito peêÂ§as no seu sistema.
 
 ## O kit (`kit/`)
 
-Scripts pequenos (python3 + bash + git, sem pip). Os ensaios nêÂ£o chamam modelo; `agente-claude.sh` êÂ© o êÂºnico que chama (`claude -p --tools "" --output-format json`, pela sua assinatura). O kit lêÂª os repositêÂ³rios pêÂºblicos [loop-r](https://github.com/inematds/loop-r) e [sil-loop-r](https://github.com/inematds/sil-loop-r) em `~/projetos`, e nunca grava neles.
+Scripts pequenos (python3 + bash + git, sem pip). Os ensaios nêÂ£o chamam modelo; `agente-claude.sh` êÂ© o êÂºnico que chama (`claude -p --tools "" --output-format json`, pela sua assinatura). O kit lêÂª os repositêÂ³rios pêÂºblicos [loop-r](https://github.com/linnoff88-dev/loop-r) e [sil-loop-r](https://github.com/linnoff88-dev/sil-loop-r) em `~/projetos`, e nunca grava neles.
 
 | arquivo | aula | o que faz |
 |---|---|---|
@@ -29,9 +29,9 @@ Scripts pequenos (python3 + bash + git, sem pip). Os ensaios nêÂ£o chamam m
 | `blocos/`, `saidas/`, `capturar.sh` | ê¢â¬â | cada bloco "Terminal" das aulas e a saêÂ­da capturada em 19/10/2026 |
 
 ```bash
-git clone https://github.com/inematds/loop-r-eng-aprende-v72 ~/projetos/loop-r-eng-aprende-v72
-git clone https://github.com/inematds/loop-r ~/projetos/loop-r
-git clone https://github.com/inematds/sil-loop-r ~/projetos/sil-loop-r
+git clone https://github.com/linnoff88-dev/loop-r-eng-aprende-v72 ~/projetos/loop-r-eng-aprende-v72
+git clone https://github.com/linnoff88-dev/loop-r ~/projetos/loop-r
+git clone https://github.com/linnoff88-dev/sil-loop-r ~/projetos/sil-loop-r
 bash ~/projetos/loop-r-eng-aprende-v72/kit/blocos/a2-ensaio.sh
 ```
 
@@ -43,9 +43,9 @@ ConteêÂºdo em `conteudo/<idioma>/` (JSON). O HTML êÂ© gerado: `python3
 
 ---
 
-**EN** ê¢â¬â *The Loop That Learns*, course 5 of 6 of the LOOP-R Engineering Track: numeric hypotheses, keep/discard experiments with git, A/B verdicts with guardrails, promotion and rollback, lessons that become binding rules, Goodhart, cost per cycle. Open and free (INEMA.CLUB).
+**EN** ê¢â¬â *The Loop That Learns*, course 5 of 6 of the LOOP-R Engineering Track: numeric hypotheses, keep/discard experiments with git, A/B verdicts with guardrails, promotion and rollback, lessons that become binding rules, Goodhart, cost per cycle. Open and free (ARCKHÉ AI).
 
-**ES** ê¢â¬â *El loop que aprende*, curso 5 de 6 de la FormaciêÂ³n LOOP-R IngenierêÂ­a: hipêÂ³tesis con nêÂºmero, experimentos keep/discard con git, veredictos A/B con barandillas, promociêÂ³n y rollback, lecciones que se vuelven reglas vinculantes, Goodhart y costo por ciclo. Abierto y gratuito (INEMA.CLUB).
+**ES** ê¢â¬â *El loop que aprende*, curso 5 de 6 de la FormaciêÂ³n LOOP-R IngenierêÂ­a: hipêÂ³tesis con nêÂºmero, experimentos keep/discard con git, veredictos A/B con barandillas, promociêÂ³n y rollback, lecciones que se vuelven reglas vinculantes, Goodhart y costo por ciclo. Abierto y gratuito (ARCKHÉ AI).
 
 ---
 

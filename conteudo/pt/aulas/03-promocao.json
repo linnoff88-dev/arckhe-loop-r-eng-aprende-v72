@@ -80,7 +80,7 @@
         {
           "rot": "Terminal · ensaio sem custo",
           "icone": "terminal",
-          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nX=~/projetos/loop-r/exemplos/vendas-whatsapp   # git clone https://github.com/inematds/loop-r ~/projetos/loop-r (dados SINTÉTICOS)\nE=${TMPDIR:-/tmp}/ensaio-aprende/a3; rm -rf $E; L=$E/loop   # uma CÓPIA: nada é gravado no repo loop-r\npython3 $K/loopr.py iniciar $L --v1 $X/versoes/v1/executor.prompt.md --candidata $X/versoes/v2/executor.prompt.md\necho \"## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações\"\npython3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-02-02 --ate 2026-04-26 \\\n  --metrica resposta --minimo 166 --vigiar reclamou:0 --vigiar optout:0.005; echo \"saída: $?\"\necho \"## E0002 · H3 (abrir citando um ponto da avaliaçêo)\"\npython3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-05-04 --ate 2026-07-26 \\\n  --metrica resposta --minimo 212 --vigiar reclamou:0.01 --vigiar optout:0.005; echo \"saída: $?\""
+          "conteudo": "K=~/projetos/loop-r-eng-aprende-v72/kit\nX=~/projetos/loop-r/exemplos/vendas-whatsapp   # git clone https://github.com/linnoff88-dev/loop-r ~/projetos/loop-r (dados SINTÉTICOS)\nE=${TMPDIR:-/tmp}/ensaio-aprende/a3; rm -rf $E; L=$E/loop   # uma CÓPIA: nada é gravado no repo loop-r\npython3 $K/loopr.py iniciar $L --v1 $X/versoes/v1/executor.prompt.md --candidata $X/versoes/v2/executor.prompt.md\necho \"## E0001 · H2 (até 80 palavras), tolerância 0 em reclamações\"\npython3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-02-02 --ate 2026-04-26 \\\n  --metrica resposta --minimo 166 --vigiar reclamou:0 --vigiar optout:0.005; echo \"saída: $?\"\necho \"## E0002 · H3 (abrir citando um ponto da avaliaçêo)\"\npython3 $K/loopr.py veredito $L --csv $X/dados/execucoes.csv --de 2026-05-04 --ate 2026-07-26 \\\n  --metrica resposta --minimo 212 --vigiar reclamou:0.01 --vigiar optout:0.005; echo \"saída: $?\""
         }
       ],
       "saida": {
@@ -300,17 +300,17 @@
       "links": [
         {
           "t": "kit/loopr.py",
-          "href": "https://github.com/inematds/loop-r-eng-aprende-v72/blob/main/kit/loopr.py",
+          "href": "https://github.com/linnoff88-dev/loop-r-eng-aprende-v72/blob/main/kit/loopr.py",
           "icone": "terminal"
         },
         {
           "t": "Runner LOOP-R: iniciar, ciclo, decidir, promover, reverter",
-          "href": "https://github.com/inematds/loop-r/blob/main/.claude/skills/loop-r/SKILL.md",
+          "href": "https://github.com/linnoff88-dev/loop-r/blob/main/.claude/skills/loop-r/SKILL.md",
           "icone": "git"
         },
         {
           "t": "Exemplo vendas-whatsapp: o que é real e o que é simulado",
-          "href": "https://github.com/inematds/loop-r/blob/main/exemplos/vendas-whatsapp/README.md",
+          "href": "https://github.com/linnoff88-dev/loop-r/blob/main/exemplos/vendas-whatsapp/README.md",
           "icone": "arquivo"
         }
       ]

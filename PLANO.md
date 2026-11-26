@@ -23,4 +23,4 @@ Dinheiro: o exemplo do LOOP-R registra teto em R$; o curso mede em tokens e cham
 Simulaçêo: `simconversa` na aula 3 (o dono pede para promover porque "está ganhando" com N abaixo do mínimo); `simfila` na aula 2 (fila de experimentos keep/discard, um quebra na primeira execuçêo).
 Vídeo: LOOP-R trilha 4 "Medir de verdade" (release `loop-r/video-v2.0.0`, PT/EN/ES, AUDITORIA §c) na aula 6.
 Imagens: capa + inicio + 8 heroes pelo Codex (uma por vez), sem texto; cartões dos 6 cursos reaproveitam `loop-r-eng-base-v72/assets/img/cursos/*.jpg`.
-Fecho da formaçêo: aula 8 resume os 6 cursos e aponta para a área https://eventos.inema.pro/loop-r-engenharia/ (ainda nêo publicada em 19/10/2026).
+Fecho da formaçêo: aula 8 resume os 6 cursos e aponta para a área https://eventos.ARCKHÉ.pro/loop-r-engenharia/ (ainda nêo publicada em 19/10/2026).

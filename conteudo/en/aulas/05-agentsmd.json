@@ -248,17 +248,17 @@
       "links": [
         {
           "t": "SIL Loop R: CHANGELOG for 1.1.0 (enforce, promote, check)",
-          "href": "https://github.com/inematds/sil-loop-r/blob/main/CHANGELOG.md",
+          "href": "https://github.com/linnoff88-dev/sil-loop-r/blob/main/CHANGELOG.md",
           "icone": "arquivo"
         },
         {
           "t": "Course 4, lesson 5: hooks as a guard",
-          "href": "https://inematds.github.io/loop-r-eng-seguranca-v72/en/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/en/",
           "icone": "escudo"
         },
         {
           "t": "Course 1, lesson 8: the loop gate",
-          "href": "https://inematds.github.io/loop-r-eng-verificacao-v72/en/",
+          "href": "https://linnoff88-dev.github.io/arckhe-/en/",
           "icone": "portao"
         }
       ]
